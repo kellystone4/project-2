@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Restaurant = sequelize.define("Restaurant", {
         name: {
             type: DataTypes.STRING,
@@ -18,10 +18,10 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Restaurant.associate = function(models) {
-        // We're saying that a Sight should belong to an City
-        // A Sight can't be created without an Author due to the foreign key constraint
+    // We're saying that a Resaurant should belong to an City and has a many to many relationship with Trip
+    Restaurant.associate = function (models) {
         Restaurant.belongsTo(models.City);
+        models.Restaurant.hasMany(models.TripRestaurant);
     };
 
     return Restaurant;
