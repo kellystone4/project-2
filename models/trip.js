@@ -12,6 +12,7 @@ module.exports = function (sequelize, DataTypes) {
 
     // Trip model belongs to the User model
     // Trip model also belongs to City model
+    // Trip model has a many to many relationship with Sights and Restaurants
     Trip.associate = function (models) {
         Trip.belongsTo(models.User);
         Trip.belongsTo(models.City);

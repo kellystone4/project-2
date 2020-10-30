@@ -18,9 +18,8 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    // We're saying that a Resaurant should belong to an City and has a many to many relationship with Trip
     Restaurant.associate = function (models) {
-        // We're saying that a Sight should belong to an City
-        // A Sight can't be created without an Author due to the foreign key constraint
         Restaurant.belongsTo(models.City);
         models.Restaurant.hasMany(models.TripRestaurant);
     };
