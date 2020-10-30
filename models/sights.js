@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Sight = sequelize.define("Sight", {
         title: {
             type: DataTypes.STRING,
@@ -14,10 +14,11 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Sight.associate = function(models) {
+    Sight.associate = function (models) {
         // We're saying that a Sight should belong to an City
         // A Sight can't be created without an Author due to the foreign key constraint
         Sight.belongsTo(models.City);
+        models.Sight.hasMany(models.TripSight);
     };
 
     return Sight;
