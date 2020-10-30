@@ -1,16 +1,16 @@
 module.exports = function (sequelize, DataTypes) {
     var Sight = sequelize.define("Sight", {
-        title: {
+        name: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
+            notNull: true
         },
-        body: {
+        description: {
             type: DataTypes.TEXT,
-            allowNull: false,
-            len: [1]
+            notNull: true
+        },
+        image: {
+            type: DataTypes.STRING,
+            notNull: true
         }
     });
 
