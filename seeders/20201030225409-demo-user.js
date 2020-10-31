@@ -32,6 +32,7 @@ module.exports = {
       }
     ], {});
 
+    // --------------------------------------------------------------------------------------------
     // Get city ids from the cities table
     const cityIds = await queryInterface.sequelize.query(
       "SELECT id from CITIES;"
@@ -40,13 +41,14 @@ module.exports = {
     // Create variable to access city ids to use for associations in seeds
     const cityRows = cityIds[0];
 
-    // Get city ids from the cities table
+    // Get user ids from the users table
     const userIds = await queryInterface.sequelize.query(
       "SELECT id from USERS;"
     )
 
-    // Create variable to access city ids to use for associations in seeds
+    // Create variable to access user ids to use for associations in seeds
     const userRows = userIds[0];
+    // --------------------------------------------------------------------------------------------
 
     // Adds seeds for Sights table
     await queryInterface.bulkInsert("Sights", [
@@ -119,12 +121,75 @@ module.exports = {
       }
     ], {});
 
+    // --------------------------------------------------------------------------------------------
+    // Get sight ids from the sights table
+    const sightIds = await queryInterface.sequelize.query(
+      "SELECT id from SIGHTS;"
+    )
+
+    // Create variable to access sight ids to use for associations in seeds
+    const sightRows = sightIds[0];
+    console.log(sightRows);
+
+    // Get restaurant ids from the restaurants table
+    const restaurantIds = await queryInterface.sequelize.query(
+      "SELECT id from RESTAURANTS;"
+    )
+
+    // Create variable to access restaurant ids to use for associations in seeds
+    const restaurantRows = restaurantIds[0];
+
+    // Get trip ids from the trips table
+    const tripIds = await queryInterface.sequelize.query(
+      "SELECT id from TRIPS;"
+    )
+
+    // Create trip to access trip ids to use for associations in seeds
+    const tripRows = tripIds[0];
+    // --------------------------------------------------------------------------------------------
+
+    // Adds seeds for TripSights table
+    await queryInterface.bulkInsert("TripSights", [
+      {
+        SightId: sightRows[0].id,
+        TripId: tripRows[0].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        SightId: sightRows[2].id,
+        TripId: tripRows[0].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }
+    ], {});
+
+    // Adds seeds for TripRestaurants table
+    await queryInterface.bulkInsert("TripRestaurants", [
+      {
+        RestaurantId: sightRows[0].id,
+        TripId: tripRows[0].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        RestaurantId: sightRows[1].id,
+        TripId: tripRows[0].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }
+    ], {});
+
   },
 
   down: async (queryInterface, Sequelize) => {
     // Reverts seeds for all tables
     await queryInterface.bulkDelete('Users', null, {});
-    await queryInterface.bulkDelete('Restaurants', null, {});
     await queryInterface.bulkDelete('Cities', null, {});
+    await queryInterface.bulkDelete('Sights', null, {});
+    await queryInterface.bulkDelete('Restaurants', null, {});
+    await queryInterface.bulkDelete('TripSights', null, {});
+    await queryInterface.bulkDelete('TripRestaurants', null, {});
+    await queryInterface.bulkDelete('TripSights', null, {});
   }
 };
