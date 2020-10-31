@@ -37,8 +37,16 @@ module.exports = {
       "SELECT id from CITIES;"
     )
 
-    // Create variables to access city ids to use create associations in seeds
+    // Create variable to access city ids to use for associations in seeds
     const cityRows = cityIds[0];
+
+    // Get city ids from the cities table
+    const userIds = await queryInterface.sequelize.query(
+      "SELECT id from USERS;"
+    )
+
+    // Create variable to access city ids to use for associations in seeds
+    const userRows = userIds[0];
 
     // Adds seeds for Sights table
     await queryInterface.bulkInsert("Sights", [
@@ -95,6 +103,18 @@ module.exports = {
         image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.broadsheet.com.au%2Fcache%2Fc6%2Fea%2Fc6ea30e8dfd8952f06eec8e15cc1925a.jpg&imgrefurl=https%3A%2F%2Fwww.broadsheet.com.au%2Fsydney%2Frestaurants%2Ftetsuyas&tbnid=smq7KnQMVA4oQM&vet=12ahUKEwj08ciUzNvsAhUOlZ4KHQoPAjsQMygDegUIARCXAQ..i&docid=9O7QDxDyRwVyFM&w=860&h=600&q=tetsuya%27s%20restaurant&ved=2ahUKEwj08ciUzNvsAhUOlZ4KHQoPAjsQMygDegUIARCXAQ",
         createdAt: new Date(),
         updatedAt: new Date(),
+        CityId: cityRows[0].id
+      }
+    ], {});
+
+    // Adds seeds for Trip table
+    await queryInterface.bulkInsert("Trips", [
+      {
+        name: "Trip Downunder",
+        description: "Trip to visit Sydney next year.",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        UserId: userRows[0].id,
         CityId: cityRows[0].id
       }
     ], {});
