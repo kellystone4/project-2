@@ -1,0 +1,215 @@
+<li>
+	{{cityName}}
+
+	<button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
+		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+	</button>
+</li>
+
+ <title>{{#if paris}}PARIS
+	 	{{else}}NEW YORK
+		{{else}}DUBAI
+		{{else}}SYDNEY
+		{{else}}HONG KONG
+		{{else}}LONDON
+		{{/if}}
+		</title>
+        <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url({{parisImg}})">
+            <!-- {{}}INPUT HANDLEBARS FOR BACKGROUND IMAGE -->
+        <nav>
+            <div class="nav-wrapper">
+              <a class="brand-logo"> 
+               </a>
+             <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="headerLogo">
+
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">X P L O R E</i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">H O M E</a></li>
+                <li><a href="saved.html">S A V E D &nbsp; T R I P S</a></li>
+                <li>
+                    <a class="modal-trigger" href="#modal">S I G N &nbsp; U P</a>
+                    
+                <!-- <button data-target="modal1" class="btn modal-trigger">S I G N &nbsp; U P</button> -->
+                </li>
+
+              </ul>
+              
+            </div>
+          </nav>
+          
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">H O M E</a></li>
+            <li><a href="badges.html">S A V E D &nbsp; T R I P S</a></li>
+            <li><a href="collapsible.html">S I G N &nbsp; U P</a></li>
+          </ul>
+
+
+
+           <!-- Modal Trigger -->
+         
+  <div id="modal" class="modal">
+    <div class="jumbotron bg-cover text-white pic" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://wallpaperaccess.com/full/123346.jpg)">
+
+    <div class="modal-content">
+
+        <div class="row">
+         
+            <h4 class="usernameInput">Save Your Trips! </h4>
+     
+              <h4 class="inputUsernameHere">Input your new username below</h4>
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s2"></div>
+                <div class="input-field col s8">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="icon_prefix" type="text" class="validate text">
+                  <label for="icon_prefix">Username</label>
+                
+                </div>
+                <div class="input-field col s2"></div>
+                <!-- <div class="input-field col s6">
+                  <i class="material-icons prefix">phone</i>
+                  <input id="icon_telephone" type="tel" class="validate text">
+                  <label for="icon_telephone">Telephone</label>
+                </div> -->
+              </div>
+            </div>
+            </form>
+          </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sign Me Up!</a>
+    </div>
+</div>
+        
+                  
+	</head>
+	<body> 
+
+    
+     
+           
+        <div class="border border-danger card text-center" style="background-color: rgba(245, 245, 245, 0.5);">
+            <div class="card-header">
+            </div>
+          </div>
+          
+          <br>
+          <h1 class="title wel animate__animated animate__pulse"> 
+	
+            <div id="title"> 
+		{{#if paris}}P A R I S
+	 	{{else}}N E W &nbsp; Y O R K
+		{{else}}D U B A I
+		{{else}}S Y D N E Y
+		{{else}}H O N G &nbsp; K O N G
+		{{else}}L O N D O N
+		{{/if}} </div>
+		</h1>
+             <!-- {{}} INPUT HANDLEBARS IN PLACE OF "PARIS" -->
+
+             <div class="row sRS">
+                <div class="grid-example col s12 m4"><span class="flow-text"><h3>SIGHTS</h3>
+                    <br>
+                    {{pS1}} 
+                    <br>
+                    {{pS1Img}} 
+                <br>
+                    {{pS1Info}}
+                
+                       <br>
+                    {{pS2}} 
+                    <br>
+                    {{pS2Img}} 
+                <br>
+                    {{pS2Info}}
+                
+       <br>
+                    {{pS3}} 
+                    <br>
+                    {{pS3Img}} 
+                <br>
+                    {{pS3Info}}
+                
+                </span>
+				</div>
+                <div class="grid-example col s12 m4"><span class="flow-text"><h3>RESTAURANTS</h3>
+                    <br>
+                    1. RESTO ONE 
+                    <br>
+                    -IMG
+                <br>
+                    -INFO
+                
+
+                    <br>
+                    2. RESTO TWO
+                    <br>
+                    -IMG
+                <br>
+                    -INFO
+                
+    
+    
+                    <br>
+                    3. RESTO THREE
+                    <br>
+                    -IMG
+                <br>
+                    -INFO
+                
+                </span></div>
+                <div class="grid-example col s12 m4"><span class="flow-text"><h3>SAVED</h3>
+                    <br>
+                    1. PARIS 
+
+
+
+                    <br>
+                    2. LONDON
+    
+    
+    
+    
+    
+                    <br>
+                    3. HONG KONG
+                    
+        </span></div>
+
+              </div>
+                    
+             
+             
+                <div class="container">
+                  <!-- Page Content goes here -->
+                </div>
+              </body>
+                    
+<script>
+
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    $('#modal').modal(); 
+     $('#modal').modal('open'); 
+     $('#modal').modal('close'); 
+    $('input#input_text, textarea#textarea2').characterCounter();
+  });
+  
+
+</script>
+</section>
+</footer>
+</div>
+
+
+
+
+// columnA
+if 
+else 
+
+
+
+// ColumnB
+if else
