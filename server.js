@@ -21,10 +21,19 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
-// Routes
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+// Import routes and give the server access to them
 // =============================================================
-// require("./routes/api-routes.js")(app);
-// require("./routes/html-routes.js")(app);
+var cityRoute = require("./controllers/cityController.js");
+var userRoute = require("./controllers/userController.js");
+
+app.use(cityRoute);
+app.use(userRoute);
 
 // Syncing our sequelize models and then starting our Express app
 // Force will be true for all environments except for when in production environment/Heroku
