@@ -9,11 +9,11 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         website: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false
         },
         image: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false
         },
         // city_id: {
