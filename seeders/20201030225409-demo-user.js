@@ -113,7 +113,7 @@ module.exports = {
     await queryInterface.bulkInsert("Trips", [
       {
         name: "Trip Downunder",
-        description: "Trip to visit Sydney next year.",
+        description: "Trip to visit Sydney next year",
         createdAt: new Date(),
         updatedAt: new Date(),
         UserId: userRows[0].id,
@@ -179,7 +179,6 @@ module.exports = {
         updatedAt: new Date(),
       }
     ], {});
-
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -188,8 +187,8 @@ module.exports = {
     await queryInterface.bulkDelete('Cities', null, {});
     await queryInterface.bulkDelete('Sights', null, {});
     await queryInterface.bulkDelete('Restaurants', null, {});
+    await queryInterface.bulkDelete('Trips', null, {});
     await queryInterface.bulkDelete('TripSights', null, {});
     await queryInterface.bulkDelete('TripRestaurants', null, {});
-    await queryInterface.bulkDelete('TripSights', null, {});
   }
 };
