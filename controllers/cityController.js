@@ -5,9 +5,8 @@ var router = express.Router();
 // Import the city model to use its database functions.
 var db = require("../models/index.js");
 
-// Create all our routes and set up logic within those routes where required.
+// API route to find specific city where id matches req.params.id
 router.get("/api/city/:id", function (req, res) {
-    // Find specific city where id matches req.params.id
     db.City.findOne({
         where: {
             id: req.params.id

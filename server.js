@@ -30,8 +30,10 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them
 // =============================================================
 var cityRoute = require("./controllers/cityController.js");
+var userRoute = require("./controllers/userController.js");
 
 app.use(cityRoute);
+app.use(userRoute);
 
 // Syncing our sequelize models and then starting our Express app
 // Force will be true for all environments except for when in production environment/Heroku
