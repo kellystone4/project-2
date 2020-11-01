@@ -1,11 +1,15 @@
- <div class="border border-danger card text-center" style="background-color: rgba(245, 245, 245, 0.5);">
-            <div class="card-header">
-            </div>
-          
-          <br>
-          <h1 class="title wel animate__animated animate__pulse"><img src="public/LogoMakr-7a5fw7.png" alt="Italian Trulli" class="logo">	
-	
-                <title>XPLORE</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css" type="text/css" /> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/40ec475331.js" crossorigin="anonymous"></script>
+        <title>XPLORE</title>
         <!-- {{!-- <script src="/assets/js/cats.js"></script> --}} -->
         <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://cdn.hipwallpaper.com/m/79/39/EnHmod.jpg)">
 
@@ -14,7 +18,7 @@
               <a class="brand-logo"> 
                   <!-- <h1 class="wel animate__animaed animate__pulse"> <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="logo">	 -->
                </a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">X P L O R E</i></a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="index.html">H O M E</a></li>
                 <li><a href="saved.html">S A V E D &nbsp; T R I P S</a></li>
@@ -30,9 +34,9 @@
           </nav>
           
           <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">H O M E</a></li>
-            <li><a href="badges.html">S A V E D &nbsp; T R I P S</a></li>
-            <li><a href="collapsible.html">S I G N &nbsp; U P</a></li>
+            <li><a href="index.html">H O M E</a></li>
+            <li><a href="saved.html">S A V E D &nbsp; T R I P S</a></li>
+            <li><a href="#modal" class="modal-trigger">S I G N &nbsp; U P</a></li>
           </ul>
 
 
@@ -98,30 +102,31 @@
                 <h2><i class="fas fa-archway"></i>
                 </h2>
             </h2>
+            <a href="city.html" class="btn-action btn-close waves-effect waves-white btn-medium btn-flat white"><p class="btnCityName">PARIS</p></a>
 
-              <p>PARIS</p>
             </div>
         <!-- </a>  -->
             <div class="bg1">
             <h2><i class="fas fa-map-marker-alt"></i></h2>
-              <p>NEW YORK</p>
+            <a href="city.html" class="btn-action btn-close waves-effect waves-white btn-medium btn-flat white"><p class="btnCityName">NEW YORK</p></a>
+
             </div>
             <div class="bg2">
               <h2><i class="fas fa-plane"></i></h2>
-              <p>DUBAI</p>
+              <a href="city.html" class="btn-action btn-close waves-effect waves-white btn-medium btn-flat white"><p class="btnCityName">DUBAI</p></a>
             </div>
-            <div class="bg1">
-              <h2><h2><i class="fas fa-passport"></i></i>
-              </h2>
-              <p>SYDNEY</p>
+            <div class="bg2">
+              <h2><i class="fas fa-passport"></i></h2>
+              <a href="city.html" class="btn-action btn-close waves-effect waves-white btn-medium btn-flat white"><p class="btnCityName">SYDNEY</p></a>
             </div>
+           
             <div class="bg1">
             <h2><i class="fas fa-globe-europe"></i></h2>
-             <p>HONG KONG</p>
+            <a href="city.html" class="btn-action btn-close waves-effect waves-white btn-medium btn-flat white"><p class="btnCityName">HONG KONG</p></a>
             </div>
             <div class="bg2">
               <h2><i class="fas fa-suitcase-rolling"></i></h2>
-              <p>LONDON</p>
+              <a href="city.html" class="btn-action btn-close waves-effect waves-white btn-medium btn-flat white"><p class="btnCityName">LONDON</p></a>
             </div>
           </div>
           </form>
@@ -142,12 +147,3 @@
   
 
 </script>
-</html>
-              {{!-- <ul>
-    {{#each cats}}
-      {{#unless sleepy}}
-        {{> cats/cat-block sleep=true}}
-      {{/unless}}
-    {{/each}}
-  </ul>
-   --}}
