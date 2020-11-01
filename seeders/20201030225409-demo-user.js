@@ -463,6 +463,7 @@ module.exports = {
 
     // Create trip to access trip ids to use for associations in seeds
     const tripRows = tripIds[0];
+    console.log(tripRows);
     // --------------------------------------------------------------------------------------------
 
     // Adds seeds for TripSights table
@@ -476,6 +477,48 @@ module.exports = {
       {
         SightId: sightRows[2].id,
         TripId: tripRows[0].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        SightId: sightRows[15].id,
+        TripId: tripRows[1].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        SightId: sightRows[16].id,
+        TripId: tripRows[1].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        SightId: sightRows[6].id,
+        TripId: tripRows[3].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        SightId: sightRows[7].id,
+        TripId: tripRows[3].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        SightId: sightRows[8].id,
+        TripId: tripRows[3].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        SightId: sightRows[0].id,
+        TripId: tripRows[2].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        SightId: sightRows[1].id,
+        TripId: tripRows[2].id,
         createdAt: new Date(),
         updatedAt: new Date(),
       }
