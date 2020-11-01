@@ -537,6 +537,48 @@ module.exports = {
         TripId: tripRows[0].id,
         createdAt: new Date(),
         updatedAt: new Date(),
+      },
+      {
+        RestaurantId: sightRows[15].id,
+        TripId: tripRows[1].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        RestaurantId: sightRows[16].id,
+        TripId: tripRows[1].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        RestaurantId: sightRows[6].id,
+        TripId: tripRows[3].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        RestaurantId: sightRows[7].id,
+        TripId: tripRows[3].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        RestaurantId: sightRows[8].id,
+        TripId: tripRows[3].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        RestaurantId: sightRows[1].id,
+        TripId: tripRows[2].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        RestaurantId: sightRows[2].id,
+        TripId: tripRows[2].id,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       }
     ], {});
   },
