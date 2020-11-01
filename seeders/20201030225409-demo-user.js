@@ -35,7 +35,7 @@ module.exports = {
     // --------------------------------------------------------------------------------------------
     // Get city ids from the cities table
     const cityIds = await queryInterface.sequelize.query(
-      "SELECT id from CITIES;"
+      "SELECT id from Cities;"
     )
 
     // Create variable to access city ids to use for associations in seeds
@@ -43,7 +43,7 @@ module.exports = {
 
     // Get user ids from the users table
     const userIds = await queryInterface.sequelize.query(
-      "SELECT id from USERS;"
+      "SELECT id from Users;"
     )
 
     // Create variable to access user ids to use for associations in seeds
@@ -124,7 +124,7 @@ module.exports = {
     // --------------------------------------------------------------------------------------------
     // Get sight ids from the sights table
     const sightIds = await queryInterface.sequelize.query(
-      "SELECT id from SIGHTS;"
+      "SELECT id from Sights;"
     )
 
     // Create variable to access sight ids to use for associations in seeds
@@ -133,7 +133,7 @@ module.exports = {
 
     // Get restaurant ids from the restaurants table
     const restaurantIds = await queryInterface.sequelize.query(
-      "SELECT id from RESTAURANTS;"
+      "SELECT id from Restaurants;"
     )
 
     // Create variable to access restaurant ids to use for associations in seeds
@@ -141,7 +141,7 @@ module.exports = {
 
     // Get trip ids from the trips table
     const tripIds = await queryInterface.sequelize.query(
-      "SELECT id from TRIPS;"
+      "SELECT id from Trips;"
     )
 
     // Create trip to access trip ids to use for associations in seeds

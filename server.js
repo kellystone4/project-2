@@ -24,6 +24,9 @@ app.use(express.static("public"));
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
+// app.engine("handlebars", handlebars({
+//     layoutsDir: `${__dirname}/views/layouts`
+// }));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -38,7 +41,7 @@ app.use(userRoute);
 // Syncing our sequelize models and then starting our Express app
 // Force will be true for all environments except for when in production environment/Heroku
 // =============================================================
-db.sequelize.sync({ force: process.env.NODE_ENV !== "production" }).then(function () {
+db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
     });
