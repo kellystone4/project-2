@@ -1,24 +1,22 @@
-{{!-- <li>
-	{{cityName}}
+{{!-- CITY PAGE --}}
 
-	<button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
-		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
-	</button>
-</li> --}}
-
- <title>{{#if paris}}PARIS
+ {{!-- <title>{{#if paris}}PARIS
 	 	{{else}}NEW YORK
 		{{else}}DUBAI
 		{{else}}SYDNEY
 		{{else}}HONG KONG
 		{{else}}LONDON
 		{{/if}}
-		</title>
-        <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url({{parisImg}})">
+		</title> --}}
+
+         <title>PARIS</title>
+        <!-- {{}}INPUT HANDLEBARS IN PLACE OF "PARIS" -->
+        <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://wallpaperaccess.com/full/1192224.jpg)">
             <!-- {{}}INPUT HANDLEBARS FOR BACKGROUND IMAGE -->
         <nav>
             <div class="nav-wrapper">
               <a class="brand-logo"> 
+                  <!-- <h1 class="wel animate__animated animate__pulse"> <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="logo">	 -->
                </a>
              <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="headerLogo">
 
@@ -93,46 +91,36 @@
             <div class="card-header">
             </div>
           </div>
-          
-          <br>
+          <a class="saveTripBtn btn-large waves-effect waves-white">SAVE THIS TRIP</a>
           <h1 class="title wel animate__animated animate__pulse"> 
-	
-            <div id="title"> 
-		{{#if paris}}P A R I S
-	 	{{else}}N E W &nbsp; Y O R K
-		{{else}}D U B A I
-		{{else}}S Y D N E Y
-		{{else}}H O N G &nbsp; K O N G
-		{{else}}L O N D O N
-		{{/if}} </div>
-		</h1>
-             <!-- {{}} INPUT HANDLEBARS IN PLACE OF "PARIS" -->
+            <div id="title">P A R I S </div> </h1> 
+            <!-- {{}} INPUT HANDLEBARS IN PLACE OF "PARIS" -->
 
              <div class="row sRS">
-                <div class="grid-example col s12 m4"><span class="flow-text"><h3>SIGHTS</h3>
+                <div class="grid-example col s12 m4 full-width"><span class="flow-text"><h3>SIGHTS</h3>
                     <br>
-                    {{pS1}} 
+                    1. SIGHT ONE 
                     <br>
-                    {{pS1Img}} 
+                    -IMG
                 <br>
-                    {{pS1Info}}
+                    -INFO
                 
-                       <br>
-                    {{pS2}} 
                     <br>
-                    {{pS2Img}} 
-                <br>
-                    {{pS2Info}}
-                
-       <br>
-                    {{pS3}} 
+                    2. SIGHT TWO
+                     <br>
+                        -IMG
                     <br>
-                    {{pS3Img}} 
-                <br>
-                    {{pS3Info}}
-                
-                </span>
-				</div>
+                        -INFO
+                    
+    
+                    <br>
+                    3. SIGHT THREE
+                    <br>
+                        -IMG
+                    <br>
+                        -INFO
+                    
+                </span></div>
                 <div class="grid-example col s12 m4"><span class="flow-text"><h3>RESTAURANTS</h3>
                     <br>
                     1. RESTO ONE 
@@ -186,6 +174,39 @@
                 </div>
               </body>
                     
+
+
+
+
+        <!-- </a>  -->
+            <!-- <div class="bg1">
+            <h2><i class="fas fa-map-marker-alt"></i></h2>
+              <p>NEW YORK</p>
+            </div>
+            <div class="bg2">
+              <h2><i class="fas fa-plane"></i></h2>
+              <p>DUBAI</p>
+            </div>
+            <div class="bg1">
+              <h2><h2><i class="fas fa-passport"></i></i>
+              </h2>
+              <p>SYDNEY</p>
+            </div>
+            <div class="bg1">
+            <h2><i class="fas fa-globe-europe"></i></h2>
+             <p>HONG KONG</p>
+            </div>
+            <div class="bg2">
+              <h2><i class="fas fa-suitcase-rolling"></i></h2>
+              <p>LONDON</p>
+            </div>
+          </div>
+          </form>
+          <br> 
+          <h1 class="text-center"> -->
+          
+
+
 <script>
 
     $(document).ready(function(){
@@ -198,18 +219,3 @@
   
 
 </script>
-</section>
-</footer>
-</div>
-
-
-
-
-// columnA
-if 
-else 
-
-
-
-// ColumnB
-if else
