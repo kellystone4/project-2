@@ -233,15 +233,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
         CityId: cityRows[5].id
-      },
-      // {
-      //   name: "",
-      //   description: "",
-      //   image: "",
-      //   createdAt: new Date(),
-      //   updatedAt: new Date(),
-      //   CityId: cityRows[2].id
-      // },
+      }
     ], {});
 
     // Adds seeds for Restaurants table
@@ -272,6 +264,141 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
         CityId: cityRows[0].id
+      },
+      {
+        name: "Tim Ho Wan",
+        type: "Dim Sum",
+        website: "http://www.timhowan.com/",
+        image: "https://i.pinimg.com/originals/bc/aa/07/bcaa07b2088069699be08235a379cad4.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[1].id
+      },
+      {
+        name: "Yardbird",
+        type: "Japanese",
+        website: "http://yardbirdrestaurant.com/info/",
+        image: "https://media.timeout.com/images/103302677/630/472/image.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[1].id
+      },
+      {
+        name: "Ho Hung Kee",
+        type: "Chinese",
+        website: "https://guide.michelin.com/en/hong-kong-region/hong-kong/restaurant/ho-hung-kee",
+        image: "https://axwwgrkdco.cloudimg.io/v7/mtp-cf-images.s3-eu-west-1.amazonaws.com/images/max/de7fa16e-3cda-432e-b54b-38d30e1d3979.jpg?width=1000",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[1].id
+      },
+      {
+        name: "Dishoom",
+        type: "Indian",
+        website: "https://www.dishoom.com/",
+        image: "https://images.prismic.io/dishoom/a4c81b86a4403b69d2093ceb6503c189d1eeb430_food_spread.jpg?auto=compress,format",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[2].id
+      },
+      {
+        name: "Smoking Goat Shoreditch",
+        type: "Thai",
+        website: "https://www.smokinggoatbar.com/",
+        image: "https://media.timeout.com/images/105152826/1372/772/image.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[2].id
+      },
+      {
+        name: "Nest",
+        type: "British",
+        website: "https://www.nestfood.co.uk/",
+        image: "https://media.timeout.com/images/105205479/1372/772/image.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[2].id
+      },
+      {
+        name: "Via Carota",
+        type: "Italian",
+        website: "http://www.viacarota.com/",
+        image: "https://pyxis.nymag.com/v1/imgs/0b4/384/cd804ebb2bbfe8d07a65e7935d7d325d9b-via-carota-1.rsocial.w1200.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[3].id
+      },
+      {
+        name: "Atoboy",
+        type: "Korean",
+        website: "http://atoboynyc.com/",
+        image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fstatic01.nyt.com%2Fimages%2F2017%2F05%2F10%2Fdining%2F10REST-ATOBOY-slide-MTNI%2F10REST-ATOBOY-slide-MTNI-articleLarge.jpg%3Fquality%3D75%26auto%3Dwebp%26disable%3Dupscale&imgrefurl=https%3A%2F%2Fwww.nytimes.com%2F2017%2F05%2F09%2Fdining%2Fatoboy-review-korean-restaurant-nyc.html&tbnid=mXbocevF2V5CnM&vet=12ahUKEwiH093poNrsAhWxATQIHUJUCmwQMygDegUIARCXAQ..i&docid=mfamA77dD2OPSM&w=600&h=400&q=atoboy&ved=2ahUKEwiH093poNrsAhWxATQIHUJUCmwQMygDegUIARCXAQ",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[3].id
+      },
+      {
+        name: "Superiority Burger",
+        type: "American",
+        website: "http://www.superiorityburger.com/",
+        image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fstatic01.nyt.com%2Fimages%2F2015%2F09%2F02%2Fdining%2F02REST-slide-4TAI%2F02REST-slide-4TAI-articleLarge.jpg%3Fquality%3D90%26auto%3Dwebp&imgrefurl=https%3A%2F%2Fwww.nytimes.com%2F2015%2F09%2F02%2Fdining%2Frestaurant-review-superiority-burger-in-the-east-village.html&tbnid=FgCGPpUKA1kHbM&vet=12ahUKEwjh29KUodrsAhVQADQIHeEgBUcQMygAegUIARC4AQ..i&docid=_Frbi0tV3FOx1M&w=600&h=400&q=superiority%20burger&ved=2ahUKEwjh29KUodrsAhVQADQIHeEgBUcQMygAegUIARC4AQ",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[3].id
+      },
+      {
+        name: "Pur’ - Jean-François Rouquette",
+        type: "Fine Dining",
+        website: "https://www.paris-restaurant-pur.fr/?src=prop_gmb_seo_purjfr",
+        image: "https://res.cloudinary.com/tf-lab/image/upload/restaurant/addec800-3e93-4cff-9cee-9466c66c4bb8/50de189c-f22a-4b42-baed-78171710377f.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[4].id
+      },
+      {
+        name: "Sebastien Gaudard",
+        type: "Pastery",
+        website: "http://www.sebastiengaudard.com/",
+        image: "https://madaboutparis.com/sites/default/files/patisseries-hd-michael-adeloc1.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[4].id
+      },
+      {
+        name: "Comice",
+        type: "Haute Cuisine",
+        website: "https://comice.paris/",
+        image: "https://static01.nyt.com/images/2020/01/03/travel/03Paris-FivePlaces2/03Paris-FivePlaces2-mobileMasterAt3x-v2.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[4].id
+      },
+      {
+        name: "SALT",
+        type: "Burgers",
+        website: "https://www.find-salt.com/",
+        image: "https://media.cntraveler.com/photos/5aa179033b65146bc1432249/master/w_1600%2Cc_limit/Salt_Anne-Sophie-Heist_2018_ASH_18-02-25__10A2399.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[5].id
+      },
+      {
+        name: "TOMO",
+        type: "Japanese",
+        website: "https://www.tomo.ae/",
+        image: "https://media.cntraveler.com/photos/5a85acc07211e1293261ced0/master/w_1600%2Cc_limit/Tomo__2018_Tomo-Terrace.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[5].id
+      },
+      {
+        name: "La Serre Bistro & Boulangerie",
+        type: "French",
+        website: "https://www.laserre.com/",
+        image: "https://media.cntraveler.com/photos/5a85acbf86e4b63c297d482c/master/w_1600%2Cc_limit/La-Serre__2018_219A8972.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[5].id
       }
     ], {});
 
