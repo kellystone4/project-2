@@ -11,11 +11,11 @@ router.get("/", function (req, res) {
         include: [
             {
                 model: db.Sight,
-                attributes: ["id"]
+                attributes: ["name", "description", "image"]
             },
             {
                 model: db.Restaurant,
-                attributes: ["id"]
+                attributes: ["name", "type", "website", "image"]
             }
         ]
     }).then(function (data) {
@@ -25,9 +25,6 @@ router.get("/", function (req, res) {
             })
         };
         console.log(JSON.stringify(hbsObject));
-        // res.json(hbsObject);
-        // Send city object to the index hbs file as response
-        // res.render("index", hbsObject);
         res.render("index", hbsObject);
     }).catch(function (err) {
         console.log(err);
