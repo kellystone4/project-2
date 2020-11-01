@@ -37,15 +37,24 @@ router.get("/api/city/:id", function (req, res) {
     db.City.findOne({
         where: {
             id: req.params.id
-        }
+        },
+        // Join with the sight and restaurant tables
+        include: [
+            {
+                model: db.Sight,
+                attributes: ["name", "description", "image"]
+            },
+            {
+                model: db.Restaurant,
+                attributes: ["name", "type", "website", "image"]
+            }
+        ]
     }).then(function (data) {
         var hbsObject = {
             city: data
         };
         console.log(hbsObject);
-        res.json(hbsObject);
-        // Send city object to the index hbs file as response
-        // res.render("index", hbsObject);
+        res.render("index", hbsObject);
     }).catch(function (err) {
         console.log(err);
         res.send(false);
