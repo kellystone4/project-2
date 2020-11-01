@@ -76,6 +76,7 @@ module.exports = {
 
     // Create variable to access city ids to use for associations in seeds
     const cityRows = cityIds[0];
+    console.log("Cities: " + cityRows);
 
     // Get user ids from the users table
     const userIds = await queryInterface.sequelize.query(
@@ -84,6 +85,7 @@ module.exports = {
 
     // Create variable to access user ids to use for associations in seeds
     const userRows = userIds[0];
+    console.log("Users: " + userRows)
     // --------------------------------------------------------------------------------------------
 
     // Adds seeds for Sights table
@@ -111,7 +113,135 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
         CityId: cityRows[0].id
-      }
+      },
+      {
+        name: "The Peak",
+        description: "Hong Kong's number one tourist destination features the peak Tower and the Peak Tram, the city's oldest mode of public transport. Come here for stunning views of the whole city.",
+        image: "https://media.timeout.com/images/105150213/630/472/image.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[1].id
+      },
+      {
+        name: "The Big Buddah",
+        description: "The Big Buddah, also known as Tian Tan Buddah, is famed as the most iconic attraction of Lantau. It's the second largest outdoor bronze seated Buddah.",
+        image: "https://media.timeout.com/images/103814201/630/472/image.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[1].id
+      },
+      {
+        name: "Temple Street Night Market",
+        description: "The fun begins around 8:00 PM, when visitors flock to the numerous stalls lining this bustling, open-air market, stocking everything from clothes to mobile phones to watches.",
+        image: "https://media.timeout.com/images/105643791/630/472/image.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[1].id
+      },
+      {
+        name: "Borough Market",
+        description: "A historic and gorgeous food market in a spot that has hosted a market almost since the time of the Magna Carta.",
+        image: "https://cdn.shopify.com/s/files/1/2537/0738/articles/borough-market_4d8edbb4-9899-4686-a03a-e6c325994139_1024x1024.jpg?v=1516018504",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[2].id
+      },
+      {
+        name: "Tower of London",
+        description: "Discover London’s castle – a secure fortress, royal palace and infamous prison where you can explore 1000 years of history. Prepare to be dazzled by the breathtaking, world famous Crown Jewels. Take a Yeoman Warder tour and hear captivating stories of pain and passion, treachery and torture. Meet the famous ravens and discover why they are known as the guardians of the Tower and marvel at the imposing White Tower, a magnificent example of Normal architecture at the heart of the Tower of London.",
+        image: "https://evanevanstours.com/blog/wp-content/uploads/2019/12/tower-of-london.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[2].id
+      },
+      {
+        name: "Tate Modern",
+        description: "A visit to London isn't complete without a trip to Tate Modern. Tate Modern is Britain's national museum of modern and contemporary art from around the globe, and the world’s most visited contemporary art gallery. Housed in the former Bankside Power Station on the banks of the Thames, the awe-inspiring Turbine Hall is the dramatic setting for new art commissions. The collection is free to visit and you can see great works of art from Louise Bourgeois, Yayoi Kusama, Henri Matisse, Cornelia Parker, Pablo Picasso, and Mark Rothko – to name a few.",
+        image: "https://www.tate.org.uk/sites/default/files/styles/width-600/public/tanks_staircase_tate_modern_3_1.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[2].id
+      },
+      {
+        name: "Central Park",
+        description: "Central park is an iconic must-see park, located between the upper and upper east sides of Manhattan. It is the most visited park in the United States, with an estimated 30 million visitors annually. It is also the most filmed location in the world!",
+        image: "https://thumbs-prod.si-cdn.com/dHJRMB2t4W_sEpa9YnUrgjlB184=/fit-in/1600x0/https://public-media.si-cdn.com/filer/8c/08/8c087dbd-dfd0-446e-8f30-c964de6e87c9/central-park.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[3].id
+      },
+      {
+        name: "Statue of Liberty",
+        description: "The Statue of Liberty was a gift from the French people commemorating the alliance of France and the United States during the American Revolution as a sign up hope and friendship…it is 305 feet 1 inch from the group level up to it’s torch and see’s 3.2 million visitors every year.",
+        image: "https://media.cntraveler.com/photos/5948071e494db63f5b6160aa/16:9/w_1280,c_limit/statue-of-liberty-GettyImages-539667859.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[3].id
+      },
+      {
+        name: "Empire State Building",
+        description: "The Empire State Building is a 102-story Art Deco skyscraper in Midtown Manhattan, New York City. It was built from 1930 to 1931. Its name is derived from 'Empire State', the nickname of the state of New York.",
+        image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.history.com%2F.image%2Ft_share%2FMTU3ODc3NjU2NzUxNTgwODk1%2Fthis-day-in-history-05011931---empire-state-building-dedicated.jpg&imgrefurl=https%3A%2F%2Fwww.history.com%2Fthis-day-in-history%2Fempire-state-building-dedicated&tbnid=5IlznHtmJtTLpM&vet=12ahUKEwjS0Py6otrsAhXKnJ4KHWFQD94QMygDegUIARDZAQ..i&docid=5nQp3KfRr6LG2M&w=1200&h=675&q=empire%20state%20building&ved=2ahUKEwjS0Py6otrsAhXKnJ4KHWFQD94QMygDegUIARDZAQ",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[3].id
+      },
+      {
+        name: "Eiffel Tower",
+        description: "Completed in 1889, this colossal landmark, although initially hated by many Parisians, is now a famous symbol of French civic pride.",
+        image: "https://www.qantas.com/content/dam/travelinsider/images/trending/eiffel-tower-park/eiffel-one.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[4].id
+      },
+      {
+        name: "Louvre Museum",
+        description: "The Louvre, or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement. Approximately 38,000 objects from prehistory to the 21st century are exhibited over an area of 72,735 square meters.",
+        image: "https://t1.gstatic.com/images?q=tbn:ANd9GcRuA7eHm1m22taUbKIO2h5AF1IfD_-55ylPg7HUM-Q4IDIQ5ofbuLesjRuq5USD1hNuie0oqAXWMBHDPPIb49OsUw",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[4].id
+      },
+      {
+        name: "Cathédrale Notre-Dame de Paris",
+        description: "Notre-Dame de Paris, referred to simply as Notre-Dame, is a medieval Catholic cathedral on the Île de la Cité in the 4th arrondissement of Paris. The cathedral was consecrated to the Virgin Mary and considered to be one of the finest examples of French Gothic architecture.",
+        image: "https://t1.gstatic.com/images?q=tbn:ANd9GcTP7Kev8E9D4tRQx70zbwJejhXbrWDSHe4YPnZRm2_iF3yXnB-J8_f6BbJov2HUz1IWVM2tpRLR2QEqkfyEkIsX1Q",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[4].id
+      },
+      {
+        name: "Burj Khalifa",
+        description: "Described as both a ‘Vertical City’ and ‘A Living Wonder,’ Burj Khalifa, developed by Dubai-based Emaar Properties PJSC, is the world’s tallest building. Rising gracefully from the desert, Burj Khalifa honours the city with its extraordinary union of art, engineering and meticulous craftsmanship. At 828 metres (2,716.5 ft), the 200 plus storey Burj Khalifa has 160 habitable levels, the most of any building in the world.",
+        image: "https://www.timeoutdubai.com/public/images/2019/07/02/Burj-Khalifa.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[5].id
+      },
+      {
+        name: "Dubai Fountain",
+        description: "Choreographed to music, the Dubai Fountain shoots water as high as 500 feet –that’s as high as a 50-story building. Designed by creators of the Fountains of Bellagio in Vegas, Dubai Fountain Performances occur daily on the 30-acre Burj Khalifa Lake.",
+        image: "https://mywowo.net/media/images/cache/dubai_dubai_fontain_01_presentazione_jpg_1200_630_cover_85.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[5].id
+      },
+      {
+        name: "Burj Al Arab",
+        description: "The distinctive sail-shaped silhouette of Burj Al Arab Jumeirah is more than just a stunning hotel, it is a symbol of modern Dubai. Rising on a man-made island, 280 metres from the shores of the renowned Jumeirah beach and designed to resemble the graceful sail of an Arabian dhow, it soars to a height of 321 metres, dominating Dubai’s coastline. The all-suite hotel offers 201 luxury duplexes with stunning views of the ocean, private beach access, luxury leisure on a breathtaking terrace with pools and cabanas as well as 9 of the world’s best dining and entertainment venues helmed by Michelin-starred chefs.",
+        image: "https://images.memphistours.com/large/9d5dedbb687073bc4da3924e1613b491.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        CityId: cityRows[5].id
+      },
+      // {
+      //   name: "",
+      //   description: "",
+      //   image: "",
+      //   createdAt: new Date(),
+      //   updatedAt: new Date(),
+      //   CityId: cityRows[2].id
+      // },
     ], {});
 
     // Adds seeds for Restaurants table
