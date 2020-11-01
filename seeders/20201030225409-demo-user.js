@@ -411,6 +411,30 @@ module.exports = {
         updatedAt: new Date(),
         UserId: userRows[0].id,
         CityId: cityRows[0].id
+      },
+      {
+        name: "Dubai Trip",
+        description: "Time to checkout Dubai",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        UserId: userRows[1].id,
+        CityId: cityRows[5].id
+      },
+      {
+        name: "London Calling",
+        description: "Trip to London to see friends",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        UserId: userRows[2].id,
+        CityId: cityRows[2].id
+      },
+      {
+        name: "Aussie Trip",
+        description: "KOALAS!",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        UserId: userRows[1].id,
+        CityId: cityRows[0].id
       }
     ], {});
 
