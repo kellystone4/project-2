@@ -1,6 +1,4 @@
-  {{!-- CITY PAGE --}}
 
- 
     
         <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("{{image}}")">
         <nav><title>{{city}}</title>
@@ -10,7 +8,7 @@
               <a class="brand-logo"> 
                   <!-- <h1 class="wel animate__animated animate__pulse"> <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="logo">	 -->
                </a>
-             <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="headerLogo"> 
+             {{!-- <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="headerLogo">  --}}
 
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
               <ul class="right hide-on-med-and-down">
@@ -57,11 +55,7 @@
                 
                 </div>
                 <div class="input-field col s2"></div>
-                <!-- <div class="input-field col s6">
-                  <i class="material-icons prefix">phone</i>
-                  <input id="icon_telephone" type="tel" class="validate text">
-                  <label for="icon_telephone">Telephone</label>
-                </div> -->
+          
               </div>
             </div>
             </form>
@@ -89,21 +83,17 @@
             <i><p class="cityDescription">{{description}}</p></i>
             <br>
              <div class="row sRS">
-                <div class="grid-example col s12 m4 full-width"><span class="flow-text"><h3><u>SIGHTS</u></h3>
+                <div class="grid-example col s12 m4 full-width" id="sightDiv"><span class="flow-text"><h3><u>SIGHTS</u></h3>
                     <br>
                     <p> {{#each city.Sights}} 
                       <label>
                     <br>
                     {{this.name}}
                     <br>
-                    {{this.description}}
+                     <p class="sightInfo">{{this.description}}</p>
                     <br>
                     <img src="{{this.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
                     <br>
-                    <label>
-                      <input type="checkbox" class="checkbox white" style="white">
-                      <span>Save here</span>
-                    </label>
                     {{/each}}
                   </p>
                   <form action="#">
@@ -145,10 +135,6 @@
                     <br>
                     <img src="{{this.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
                     <br>
-                    <label>
-                    <input type="checkbox" class="checkbox white" style="white">
-                      <span>Save here</span>
-                    </label>
                     {{/each}}
                     <form action="#">
                   </p>
@@ -192,8 +178,26 @@
     <option value="nameId">Rebecca</option>
     <option value="nameId">Andrew</option>
   </select>
-   <div class="row">
-    <form class="col s12">
+     <div class="input-field col s12">
+    <select multiple>
+        <option value="" disabled selected></option>
+   {{#each city.Sights}}
+      <option value="1">{{name}}</option>
+    {{/each}}
+     </select>
+    <label class="selectFrom">Select from Sights</label>
+  </div>
+<br>
+<div class="input-field col s12">
+    <select multiple>
+            <option value="" disabled selected></option>
+         {{#each city.Restaurants}}
+      <option value="1">{{name}}</option>
+    {{/each}}
+        </select>
+    <label class="selectFrom">Select from Restaurants</label>
+  </div>
+<form class="col s12">
       <div class="row">
         <div class="input-field col s6 textInput">
           <i class="material-icons prefix">mode_edit</i>
@@ -203,75 +207,28 @@
       </div>
     </form>
   </div>
-  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
+   <a class="saveTripBtn btn-large waves-effect waves-white">SAVE THIS TRIP</a>
+
+  </div>
+ 
            <div class = "savedItems">
-                    1. PARIS  
-                    <br> 
-                    <ul>  
-                    
-                    <p class="savedSight">The Louvre</p>
-                    
-                    
-                    <p class="savedRestaurant">Pur’ - Jean-François Rouquette</p>
-                    
-                  </ul>
-                                
-                    <a class="deleteBtn btn-small waves-effect waves-white">DELETE</a>
-
-
-                  
-                    <br>
-                    2. LONDON
-                    <br>
-                    <a class="deleteBtn btn-small waves-effect waves-white">DELETE</a>
-
-    
-    
-    
-    
-                    <br>
-                    3. HONG KONG
-                    <br>
-                    <a class="deleteBtn btn-small waves-effect waves-white">DELETE</a>
-                    <br>
-                    <br>
-                    <a class="saveTripBtn btn-large waves-effect waves-white">SAVE THIS TRIP</a>
-
-        </span></div>
-              </div>
-              </div>
-                <div class="row">
-    {{!-- <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">mode_edit</i>
-          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-          <label for="icon_prefix2">First Name</label>
-        </div>
-      </div>
-    </form>
-  </div>     --}}
-             
-                <div class="container">
-                  <!-- Page Content goes here -->
-                </div>
-              </body>
-                    
-
-<script>
-console.log({{Sights}})
-
+{{!--            
+                    <a class="deleteBtn btn-small waves-effect waves-white">DELETE</a> --}}
+          
+<script type="text/javascript">
     $(document).ready(function(){
       $('.sidenav').sidenav();
-    $('#modal').modal(); 
-     $('#modal').modal('open'); 
-     $('#modal').modal('close'); 
+    $('.modal').modal(); 
+     $('.modal').modal('open'); 
+     $('.modal').modal('close'); 
     $('input#input_text, textarea#textarea2').characterCounter();
     $('select').formSelect();
-
+    instance.getSelectedValues();
+    $('select').formSelect();
   });
-  
 
 </script>
+  
+       
+
+</html>

@@ -177,9 +177,20 @@ p{
     font-size: 25px;
     padding: 3%;
 }
+.addDescriptionHere {
+  margin-top: -2%;
+}
 .logo{
     width: 90px;
     height: auto;
+}
+.selectFrom{
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  letter-spacing: 1px; 
+  padding: 1%;
+  margin-top: -4%;
 
 }
 .text {
