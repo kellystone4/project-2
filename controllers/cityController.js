@@ -45,7 +45,7 @@ router.get("/api/city/:id", function (req, res) {
             city: data
         };
         console.log(hbsObject);
-        res.render("index", hbsObject);
+        res.render("city-block", hbsObject);
     }).catch(function (err) {
         console.log(err);
         res.send(false);
