@@ -33,11 +33,11 @@ router.get("/api/city/:id", function (req, res) {
         include: [
             {
                 model: db.Sight,
-                attributes: ["name", "description", "image"]
+                attributes: ["id", "name", "description", "image"]
             },
             {
                 model: db.Restaurant,
-                attributes: ["name", "type", "website", "image"]
+                attributes: ["id", "name", "type", "website", "image"]
             }
         ]
     }).then(function (data) {

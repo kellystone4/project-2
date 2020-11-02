@@ -182,7 +182,7 @@
     <select multiple>
         <option value="" disabled selected></option>
    {{#each city.Sights}}
-      <option value="1">{{name}}</option>
+      <option value="{{id}}">{{name}}</option>
     {{/each}}
      </select>
     <label class="selectFrom">Select from Sights</label>
@@ -192,7 +192,7 @@
     <select multiple>
             <option value="" disabled selected></option>
          {{#each city.Restaurants}}
-      <option value="1">{{name}}</option>
+      <option value="{{id}}">{{name}}</option>
     {{/each}}
         </select>
     <label class="selectFrom">Select from Restaurants</label>
