@@ -4,7 +4,6 @@ var router = express.Router();
 
 // Import the model (trip.js) to use its database functions.
 const db = require("../models/index.js");
-const trip = require("../models/trip.js");
 
 // Create all our routes and set up logic within those routes where required.
 
@@ -20,13 +19,40 @@ router.get("/api/trips", function (req, res) {
             model: db.City,
             as: "City",
             attributes: ["name"]
+        },
+        {
+            model: db.TripSight,
+            // as: "TripSights",
+            // attributes: ["SightId"]
+            include: {
+                model: db.Sight,
+                // as: "sight",
+                attributes: ["name"]
+            },
+        },
+
+        {
+            model: db.TripRestaurant, 
+            include: {
+                model: db.Restaurant,
+                // as: "sight",
+                attributes: ["name"]
+            }
         }
+        
+        // {
+        //     model: db.City,
+        //     as: "City",
+        //     attributes: ["name"]
+        // },
         ]
     }).then(function (data) {
         // res.json(data);
         // console.log(data);
         var hbsObject = {
-            trip: data
+            trip: data.map(function (trip) {
+                return trip.toJSON();
+            })
         };
         console.log(hbsObject)
         res.render("saved", hbsObject);

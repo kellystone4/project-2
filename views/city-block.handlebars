@@ -12,8 +12,8 @@
 
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
               <ul class="right hide-on-med-and-down">
-                <a href="index.html">H O M E</a>
-                <a href="saved.html">S A V E D &nbsp; T R I P S</a>
+                <a href="/">H O M E</a>
+                <a href="/api/trips">S A V E D &nbsp; T R I P S</a>
                 
                     <a class="modal-trigger" href="#modal">S I G N &nbsp; U P</a>
                     
@@ -26,8 +26,8 @@
           </nav>
           
           <ul class="sidenav" id="mobile-demo">
-            <a href="index.html">H O M E</a>
-            <a href="saved.html">S A V E D &nbsp; T R I P S</a>
+            <a href="/">H O M E</a>
+            <a href="api/trips">S A V E D &nbsp; T R I P S</a>
             <a href="#modal" class="modal-trigger">S I G N &nbsp; U P</a>
           </ul>
 
@@ -218,9 +218,9 @@
 <script type="text/javascript">
     $(document).ready(function(){
       $('.sidenav').sidenav();
-    $('.modal').modal(); 
-     $('.modal').modal('open'); 
-     $('.modal').modal('close'); 
+    $('#modal').modal(); 
+     $('#modal').modal('open'); 
+     $('#modal').modal('close'); 
     $('input#input_text, textarea#textarea2').characterCounter();
     $('select').formSelect();
     instance.getSelectedValues();

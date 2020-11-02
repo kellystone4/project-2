@@ -1,18 +1,14 @@
 <title>SAVED</title>
-        <!-- {{}}INPUT HANDLEBARS IN PLACE OF "PARIS" -->
         <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://wallpaperaccess.com/full/1192224.jpg)">
-            <!-- {{}}INPUT HANDLEBARS FOR BACKGROUND IMAGE -->
         <nav>
             <div class="nav-wrapper linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%)">
               <a class="brand-logo"> 
-                  <!-- <h1 class="wel animate__animated animate__pulse"> <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="logo">	 -->
                </a>
-             <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="headerLogo"> 
 
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
               <ul class="right hide-on-med-and-down">
-                <li><a href="index.html">H O M E</a></li>
-                <li><a href="saved.html">S A V E D &nbsp; T R I P S</a></li>
+                <li><a href="/">H O M E</a></li>
+                <li><a href="/api/trips">S A V E D &nbsp; T R I P S</a></li>
                 <li>
                     <a class="modal-trigger" href="#modal">S I G N &nbsp; U P</a>
                     
@@ -25,8 +21,8 @@
           </nav>
           
           <ul class="sidenav" id="mobile-demo">
-            <li><a href="index.html">H O M E</a></li>
-            <li><a href="saved.html">S A V E D &nbsp; T R I P S</a></li>
+            <li><a href="/">H O M E</a></li>
+            <li><a href="api/trips">S A V E D &nbsp; T R I P S</a></li>
             <li><a href="#modal" class="modal-trigger">S I G N &nbsp; U P</a></li>
           </ul>
 
@@ -81,7 +77,6 @@
           </div>
           <h1 class="title wel animate__animated animate__pulse"> 
             <div id="title">S A V E D &nbsp; T R I P S </div> </h1> 
-            <!-- {{}} INPUT HANDLEBARS IN PLACE OF "PARIS" -->
             <h5 class="viewSubheader">VIEW YOUR FRIEND'S TRIPS!</h5>
 
             
@@ -92,15 +87,34 @@
      <div class="col s8 m4 l2 appendSavedTripInfo"><p></p></div> 
       <div class="col s12 m7 full-width">
         <div class="card horizontal">
-          <div class="card-image">
+          {{!-- <div class="card-image">
             <img src="https://t1.gstatic.com/images?q=tbn:ANd9GcRuA7eHm1m22taUbKIO2h5AF1IfD_-55ylPg7HUM-Q4IDIQ5ofbuLesjRuq5USD1hNuie0oqAXWMBHDPPIb49OsUw" style="width: 300px; height: 200px sightImg" alt="Italian Trulli" >
-          </div>
+          </div> --}}
           <div class="card-stacked">
-            <div class="card-content">
-              <h2 class="header userName">KELLY'S PARIS TRIP</h2>
+            <div class="card-content">{{#each trip}}
+              <h2 class="header tripName"><u>
+                {{this.name}}</h2></u>
+                <p class="savedTripUserCity">
+                <b>{{this.User.name}}'s Trip to {{this.City.name}}</b>
+                <br>
+                </p>
+                <p class= "savedTripInfo">
+                <u>Description:</u><i> {{this.description}} </i>
+                <br>
+              <p class= "savedTripInfo">
+                <b> <u>Saved Events:</u></b> 
+                {{#each TripSights}}
+                {{this.Sight.name}} |
+                {{/each}}
+                 {{#each TripRestaurants}}
+                 {{this.Restaurant.name}} |
+                {{/each}}
               <div class="card-action">
-              <!-- USE {{{}}} FOR USER NAME 'KELLY' add 'S TRIP-->
-              <!-- USE {{{CITY NAME}}} -->
+                </p>
+                <hr>
+                <br>
+            {{/each}}
+            
               <div class="row">
                 <div class="grid-example col s12 m4">
                    <p>HELLO</p>
@@ -108,7 +122,6 @@
                 <div class="grid-example col s12 m4">
                      <p>HELLO</p>  
                            </div>
-              <!-- USE {{{FOR CITY INFO}}} -->
             </div>
           </div>
           
@@ -129,7 +142,6 @@
         <div class="card-content">
 
   <!-- <div class="col s12 m7"> -->
-    <!-- {{{ USER }}}-->
     <!-- <div class="card horizontal grey"> -->
 
 <!--       
