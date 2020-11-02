@@ -1,12 +1,39 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function() {
-  $(".change-sleep").on("click", function(event) {
-    var id = $(this).data("id");
-    var newSleep = $(this).data("newsleep");
+//ADD CITY TO SAVED LIST on CITY.HTML & SAVED.HTML
+$(document).ready(function({
+var headerInput = 
 
-    var newSleepState = {
-      sleepy: newSleep
-    };
+
+})
+
+$(".saveCityBtn").on("click", function(event){
+  event.preventDefault();
+  var newCity = {
+      city_name: $("#bg").val(),
+    }  
+    $(".add-city-list").append('<li>'+newCity.city_name+'</li>');
+    $.ajax("/api/city", {
+      type: "GET",
+      data: newCity
+    }).then(
+      function() {
+        console.log("added New City");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+
+
+// $(function() {
+//   $(".change-sleep").on("click", function(event) {
+//     var id = $(this).data("id");
+//     var newSleep = $(this).data("newsleep");
+
+//     var newSleepState = {
+//       sleepy: newSleep
+//     };
 
     // Send the PUT request.
     $.ajax("/api/cats/" + id, {

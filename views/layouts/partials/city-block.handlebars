@@ -1,28 +1,28 @@
-{{!-- <li>
-	{{cityName}}
+  {{!-- CITY PAGE --}}
 
-	<button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
-		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
-	</button>
-</li> --}}
-
- <title>{{#if paris}}PARIS
+ {{!-- <title>{{#if paris}}PARIS
 	 	{{else}}NEW YORK
 		{{else}}DUBAI
 		{{else}}SYDNEY
 		{{else}}HONG KONG
 		{{else}}LONDON
 		{{/if}}
-		</title>
+		</title> --}}
+    
         <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url({{parisImg}})">
+            <!-- {{}}INPUT HANDLEBARS FOR BACKGROUND IMAGE -->
+        <nav><title>PARIS</title>
+        <!-- {{}}INPUT HANDLEBARS IN PLACE OF "PARIS" -->
+        <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://wallpaperaccess.com/full/1192224.jpg)">
             <!-- {{}}INPUT HANDLEBARS FOR BACKGROUND IMAGE -->
         <nav>
             <div class="nav-wrapper">
               <a class="brand-logo"> 
+                  <!-- <h1 class="wel animate__animated animate__pulse"> <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="logo">	 -->
                </a>
-             <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="headerLogo">
+             <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="headerLogo"> 
 
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">X P L O R E</i></a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="index.html">H O M E</a></li>
                 <li><a href="saved.html">S A V E D &nbsp; T R I P S</a></li>
@@ -38,9 +38,9 @@
           </nav>
           
           <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">H O M E</a></li>
-            <li><a href="badges.html">S A V E D &nbsp; T R I P S</a></li>
-            <li><a href="collapsible.html">S I G N &nbsp; U P</a></li>
+            <li><a href="index.html">H O M E</a></li>
+            <li><a href="saved.html">S A V E D &nbsp; T R I P S</a></li>
+            <li><a href="#modal" class="modal-trigger">S I G N &nbsp; U P</a></li>
           </ul>
 
 
@@ -89,59 +89,57 @@
     
      
            
-        <div class="border border-danger card text-center" style="background-color: rgba(245, 245, 245, 0.5);">
+        <div class="border border-danger card text-center" style="background-color: rgba(245, 245, 245, 0.5)">
             <div class="card-header">
             </div>
           </div>
-          
-          <br>
+          {{!-- <a class="saveTripBtn btn-large waves-effect waves-white">SAVE THIS TRIP</a> --}}
           <h1 class="title wel animate__animated animate__pulse"> 
-	
-            <div id="title"> 
-		{{#if paris}}P A R I S
-	 	{{else}}N E W &nbsp; Y O R K
-		{{else}}D U B A I
-		{{else}}S Y D N E Y
-		{{else}}H O N G &nbsp; K O N G
-		{{else}}L O N D O N
-		{{/if}} </div>
-		</h1>
-             <!-- {{}} INPUT HANDLEBARS IN PLACE OF "PARIS" -->
-
+            <div id="title">P A R I S </div> </h1>             <!-- {{}} INPUT HANDLEBARS IN PLACE OF "PARIS" -->
+            <i><p class="cityDescription">Paris is unarguably one of the most beautiful cities in the world, the capital of France, of art and of fashion. There are a thousand things to do and see in Paris. Climb to the top of the Eiffel Tower, stroll down the Champs Elysées, visit the Louvre, see many shows and exhibitions, or simply wander along the banks of the Seine.</p></i>
+           {{!-- {{}} INPUT HANDLEBARS FOR SPECIFIC CITY DESCRIPTION --}}
+            <br>
              <div class="row sRS">
-                <div class="grid-example col s12 m4"><span class="flow-text"><h3>SIGHTS</h3>
+                <div class="grid-example col s12 m4 full-width"><span class="flow-text"><h3><u>SIGHTS</u></h3>
                     <br>
-                    {{pS1}} 
+                    1. Louvre Museum 
                     <br>
-                    {{pS1Img}} 
+                    <br>
+                   <img src="https://t1.gstatic.com/images?q=tbn:ANd9GcRuA7eHm1m22taUbKIO2h5AF1IfD_-55ylPg7HUM-Q4IDIQ5ofbuLesjRuq5USD1hNuie0oqAXWMBHDPPIb49OsUw" style="width: 300px; height: 200px sightImg" alt="Italian Trulli" >
+ 
                 <br>
-                    {{pS1Info}}
-                
-                       <br>
-                    {{pS2}} 
+                    <p class="sightInfo">The Louvre, or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement. Approximately 38,000 objects from prehistory to the 21st century are exhibited over an area of 72,735 square meters.</p>
+                    <a class="saveSightsBtn btn-small waves-effect waves-white">SAVE SIGHT</a>
                     <br>
-                    {{pS2Img}} 
-                <br>
-                    {{pS2Info}}
-                
-       <br>
-                    {{pS3}} 
+                    2. SIGHT TWO
+                     <br>
+                        -IMG
                     <br>
-                    {{pS3Img}} 
-                <br>
-                    {{pS3Info}}
-                
-                </span>
-				</div>
-                <div class="grid-example col s12 m4"><span class="flow-text"><h3>RESTAURANTS</h3>
+                        -INFO
+                    
+    
                     <br>
-                    1. RESTO ONE 
+                    3. SIGHT THREE
                     <br>
-                    -IMG
-                <br>
-                    -INFO
-                
+                        -IMG
+                    <br>
+                        -INFO
+                    
+                </span></div>
+                <div class="grid-example col s12 m4"><span class="flow-text"><h3><u>RESTAURANTS</u></h3>
+                    <br>
+                    1. Pur’ - Jean-François Rouquette 
+                    <br>
+                    <i><p class="restaurantType">Fine Dining</p></i>
+                    <img src="https://res.cloudinary.com/tf-lab/image/upload/restaurant/addec800-3e93-4cff-9cee-9466c66c4bb8/50de189c-f22a-4b42-baed-78171710377f.jpg"
+                    style="width: 300px; height: 200px; restaurantImg" alt="Italian Trulli" >
+                    <br>
+                    <p class="restaurantWebsite">Website: <i><a href="https://www.paris-restaurant-pur.fr/?src=prop_gmb_seo_purjfr">https://www.paris-restaurant-pur.fr/?src=prop_gmb_seo_purjfr"</a></i></p>
 
+                
+                    <a class="saveRestaurantBtn btn-small waves-effect waves-white">SAVE RESTAURANT</a>
+
+                   
                     <br>
                     2. RESTO TWO
                     <br>
@@ -159,33 +157,93 @@
                     -INFO
                 
                 </span></div>
-                <div class="grid-example col s12 m4"><span class="flow-text"><h3>SAVED</h3>
+                <div class="grid-example col s12 m4"><span class="flow-text"><h3><u>SAVED</u></h3>
                     <br>
-                    1. PARIS 
+                
+  <!-- Dropdown Structure -->
+ 
+  <select class="browser-default savedDropBox" style="width: 200px; height: 40px">
+    <option value="" disabled selected>Select User</option>
+    <option value="nameId">Kelly</option>
+    <option value="nameId">Rebecca</option>
+    <option value="nameId">Andrew</option>
+  </select>
+           <div class = "savedItems">
+                    1. PARIS  
+                    <br> 
+                    <ul>  
+                    <li>
+                    <p class="savedSight">The Louvre</p>
+                    </li>
+                    <li>
+                    <p class="savedRestaurant">Pur’ - Jean-François Rouquette</p>
+                    </li>
+                  </ul>
+                                
+                    <a class="deleteBtn btn-small waves-effect waves-white">DELETE</a>
 
 
-
+                  
                     <br>
                     2. LONDON
-    
+                    <br>
+                    <a class="deleteBtn btn-small waves-effect waves-white">DELETE</a>
+
     
     
     
     
                     <br>
                     3. HONG KONG
-                    
-        </span></div>
+                    <br>
+                    <a class="deleteBtn btn-small waves-effect waves-white">DELETE</a>
+                    <br>
+                    <br>
+                    <a class="saveTripBtn btn-large waves-effect waves-white">SAVE THIS TRIP</a>
 
+        </span></div>
+              </div>
               </div>
                     
-             
              
                 <div class="container">
                   <!-- Page Content goes here -->
                 </div>
               </body>
                     
+
+
+
+
+        <!-- </a>  -->
+            <!-- <div class="bg1">
+            <h2><i class="fas fa-map-marker-alt"></i></h2>
+              <p>NEW YORK</p>
+            </div>
+            <div class="bg2">
+              <h2><i class="fas fa-plane"></i></h2>
+              <p>DUBAI</p>
+            </div>
+            <div class="bg1">
+              <h2><h2><i class="fas fa-passport"></i></i>
+              </h2>
+              <p>SYDNEY</p>
+            </div>
+            <div class="bg1">
+            <h2><i class="fas fa-globe-europe"></i></h2>
+             <p>HONG KONG</p>
+            </div>
+            <div class="bg2">
+              <h2><i class="fas fa-suitcase-rolling"></i></h2>
+              <p>LONDON</p>
+            </div>
+          </div>
+          </form>
+          <br> 
+          <h1 class="text-center"> -->
+          
+
+
 <script>
 
     $(document).ready(function(){
@@ -194,22 +252,12 @@
      $('#modal').modal('open'); 
      $('#modal').modal('close'); 
     $('input#input_text, textarea#textarea2').characterCounter();
+    $('select').formSelect();
+
+    // var instance = M.FormSelect.getInstance(elem);
+    // instance.getSelectedValues();
+
   });
   
 
 </script>
-</section>
-</footer>
-</div>
-
-
-
-
-// columnA
-if 
-else 
-
-
-
-// ColumnB
-if else
