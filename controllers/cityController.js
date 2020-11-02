@@ -8,16 +8,7 @@ var db = require("../models/index.js");
 // API route to get all cities
 router.get("/", function (req, res) {
     db.City.findAll({
-        include: [
-            {
-                model: db.Sight,
-                attributes: ["name", "description", "image"]
-            },
-            {
-                model: db.Restaurant,
-                attributes: ["name", "type", "website", "image"]
-            }
-        ]
+        attributes: ["name"]
     }).then(function (data) {
         var hbsObject = {
             city: data.map(function (City) {
@@ -51,10 +42,11 @@ router.get("/api/city/:id", function (req, res) {
         ]
     }).then(function (data) {
         var hbsObject = {
-            city: data
+            city: data.toJSON()
         };
         console.log(hbsObject);
-        res.render("index", hbsObject);
+        console.log(hbsObject.city.Sights)
+        res.render("city-block", hbsObject);
     }).catch(function (err) {
         console.log(err);
         res.send(false);
