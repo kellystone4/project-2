@@ -10,18 +10,26 @@ const trip = require("../models/trip.js");
 
 router.get("/api/trips", function (req, res) {
     db.Trip.findAll({
+        // Join with the user and city tables
         include: [{
             model: db.User,
-            // attributes: ["name"]
+            as: "User",
+            attributes: ["name"]
         },
         {
             model: db.City,
-            // attributes: ["name"]
+            as: "City",
+            attributes: ["name"]
         }
         ]
-    }).then(function (trips) {
-        res.json(trips);
-        console.log(trips);
+    }).then(function (data) {
+        // res.json(data);
+        // console.log(data);
+        var hbsObject = {
+            trip: data
+        };
+        console.log(hbsObject)
+        res.render("saved", hbsObject);
     }).catch(function (err) {
         console.log(err);
         res.send(false);
@@ -33,32 +41,38 @@ router.post("/api/trips", function (req, res) {
     db.Trip.create(req.body)
         .then(function (trip) {
             // Add trip restaurants to restaurant
-            db.TripRestaurant.create({
-                RestaurantId: req.body.restaurantId,
-                TripId: trip.id
-            }).then(function (tripRest) {
-                console.log(tripRest)
-                db.TripSight.create({
-                    SightId: req.body.restaurantId,
+            for (let i = 0; i < req.body.restaurantId.length; i++) {
+                db.TripRestaurant.create({
+                    RestaurantId: req.body.restaurantId[i],
                     TripId: trip.id
                 })
-            }).then(function () {
-                res.send(true);
-            })
-        }).catch(function (err) {
-            console.log(err);
-            res.send(false);
-        })
-});
-
+                    .catch(function (err) {
+                        console.log(err);
+                        res.send(false);
+                    })
+            }
+            for (let i = 0; i < req.body.sightId.length; i++) {
+                db.TripSight.create({
+                    SightId: req.body.sightId[i],
+                    TripId: trip.id
+                })
+                    .catch(function (err) {
+                        console.log(err);
+                        res.send(false);
+                    })
+            }
+            res.send(true);
+        });
+})
 // Example post request
 // {
-//     "name":"My London Trip",
-//     "description": "Trip to London Town",
+//     "name":"NEW TRIP",
+//     "description": "LONDON LONDON",
 //     "CityId": 3,
 //     "UserId": 2,
-//     "restaurantId": 8
-//  }
+//     "restaurantId": [8, 9, 10],
+//     "sightId": [1, 2, 13]
+// }
 
 
 // Export routes for server.js to use.
