@@ -19,7 +19,7 @@ module.exports = function (sequelize, DataTypes) {
         // A Sight can't be created without an Author due to the foreign key constraint
         models.City.hasMany(models.Restaurant, { allowNull: false });
         models.City.hasMany(models.Sight);
-        // models.City.hasMany(models.Trip);
+        models.City.hasMany(models.Trip);
     };
 
     return City;
