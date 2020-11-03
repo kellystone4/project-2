@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
     var Sight = sequelize.define("Sight", {
         name: {
             type: DataTypes.STRING,
@@ -15,8 +15,8 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     // We're saying that a Sight should belong to an City and that it has a many to many relationship with Trips
-    Sight.associate = function (models) {
-        Sight.belongsTo(models.City);
+    Sight.associate = function(models) {
+        models.Sight.belongsTo(models.City);
         models.Sight.hasMany(models.TripSight);
     };
 
