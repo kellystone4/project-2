@@ -5,11 +5,10 @@ var router = express.Router();
 // Import the model (trip.js) to use its database functions.
 const db = require("../models/index.js");
 
-// Create all our routes and set up logic within those routes where required.
-
+// Route to get information for all trips to render on the trips page
 router.get("/api/trips", function (req, res) {
     db.Trip.findAll({
-        // Join with the user and city tables
+        // Join with the user, city, TripSight, and TripRestaurant 
         include: [{
             model: db.User,
             as: "User",
@@ -22,33 +21,20 @@ router.get("/api/trips", function (req, res) {
         },
         {
             model: db.TripSight,
-            // as: "TripSights",
-            // attributes: ["SightId"]
             include: {
                 model: db.Sight,
-                // as: "sight",
                 attributes: ["name"]
             },
         },
-
         {
-            model: db.TripRestaurant, 
+            model: db.TripRestaurant,
             include: {
                 model: db.Restaurant,
-                // as: "sight",
                 attributes: ["name"]
             }
         }
-        
-        // {
-        //     model: db.City,
-        //     as: "City",
-        //     attributes: ["name"]
-        // },
         ]
     }).then(function (data) {
-        // res.json(data);
-        // console.log(data);
         var hbsObject = {
             trip: data.map(function (trip) {
                 return trip.toJSON();
@@ -66,7 +52,7 @@ router.get("/api/trips", function (req, res) {
 router.post("/api/trips", function (req, res) {
     db.Trip.create(req.body)
         .then(function (trip) {
-            // Add trip restaurants to restaurant
+            // Add trip to TripRestaurants
             for (let i = 0; i < req.body.restaurantId.length; i++) {
                 db.TripRestaurant.create({
                     RestaurantId: req.body.restaurantId[i],
@@ -77,6 +63,7 @@ router.post("/api/trips", function (req, res) {
                         res.send(false);
                     })
             }
+            // Add trip to TripSight
             for (let i = 0; i < req.body.sightId.length; i++) {
                 db.TripSight.create({
                     SightId: req.body.sightId[i],
@@ -89,17 +76,7 @@ router.post("/api/trips", function (req, res) {
             }
             res.send(true);
         });
-})
-// Example post request
-// {
-//     "name":"NEW TRIP",
-//     "description": "LONDON LONDON",
-//     "CityId": 3,
-//     "UserId": 2,
-//     "restaurantId": [8, 9, 10],
-//     "sightId": [1, 2, 13]
-// }
-
+});
 
 // Export routes for server.js to use.
 module.exports = router;

@@ -5,7 +5,7 @@ var router = express.Router();
 // Import the city model to use its database functions.
 var db = require("../models/index.js");
 
-// API route to get all cities
+// API route to get all cities to display on the homepage
 router.get("/", function (req, res) {
     db.City.findAll({
         attributes: ["name"]
@@ -23,7 +23,7 @@ router.get("/", function (req, res) {
     });
 });
 
-// API route to find specific city where id matches req.params.id
+// API route to find specific city where id matches req.params.id, to render on the individual city pages
 router.get("/api/city/:id", function (req, res) {
     const cityInfo = db.City.findOne({
         where: {
@@ -41,6 +41,7 @@ router.get("/api/city/:id", function (req, res) {
             }
         ]
     });
+    // Find all users to render in the dropdown user menu on city page trip form
     const userInfo = db.User.findAll();
 
     Promise
