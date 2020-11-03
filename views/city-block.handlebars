@@ -12,7 +12,7 @@
                 <li><a href="/">H O M E</a></li>
                 <li><a href="/api/trips">S A V E D &nbsp; T R I P S</a></li>
                 <li>
-                    <a class="modal-trigger" href="#modal3">S I G N &nbsp; U P</a>
+                    <a class="modal-trigger" href="#modal2">S I G N &nbsp; U P</a>
                     
                 <!-- <button data-target="modal1" class="btn modal-trigger">S I G N &nbsp; U P</button> -->
                 </li>
@@ -25,7 +25,7 @@
           <ul class="sidenav" id="mobile-demo">
             <li><a href="/">H O M E</a></li>
             <li><a href="api/trips">S A V E D &nbsp; T R I P S</a></li>
-            <li><a href="#modal3" class="modal-trigger">S I G N &nbsp; U P</a></li>
+            <li><a href="#modal2" class="modal-trigger">S I G N &nbsp; U P</a></li>
           </ul>
 
 
@@ -125,15 +125,15 @@
  
   <select class="browser-default savedDropBox savedUserName" style="width: 200px; height: 40px">
     <option value="" disabled selected >Select User</option>
-    <option value="nameId">Kelly</option>
-    <option value="nameId">Rebecca</option>
-    <option value="nameId">Andrew</option>
+    {{#each user}}
+    <option value="{{dataValues.id}}">{{dataValues.name}}</option>
+    {{/each}}
   </select> 
      <div class="input-field col s12">
-    <select multiple>
-        <option value="" disabled selected></option>
+    <select multiple id="userSelectSight">
+        {{!-- <option value="" disabled selected></option> --}}
    {{#each city.dataValues.Sights}}
-      <option value="{{dataValues.id}}">{{dataValues.name}}</option>
+      <option class="selectSight" value="{{dataValues.id}}">{{dataValues.name}}</option>
     {{/each}}
      </select>
     <label class="selectFrom">Select from Sights</label>
@@ -141,7 +141,7 @@
 <br>   
 
 <div class="input-field col s12">
-    <select multiple>
+    <select multiple id="userSelectRestaurant">
             <option value="" disabled selected></option>
          {{#each city.dataValues.Restaurants}}
       <option value="{{dataValues.id}}">{{dataValues.name}}</option>
@@ -149,6 +149,15 @@
         </select>
     <label class="selectFrom">Select from Restaurants</label>
   </div>
+  <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6 textInput">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea id="icon_prefix2" class="materialize-textarea userTripName"> </textarea>
+          <label for="icon_prefix2">ADD TRIP NAME HERE</label>
+        </div>
+      </div>
+    </form>
 <form class="col s12">
       <div class="row">
         <div class="input-field col s6 textInput">
@@ -159,7 +168,7 @@
       </div>
     </form>
   </div>
-   <a class="saveTripBtn btn-large waves-effect waves-white">SAVE THIS TRIP</a>
+   <a class="saveTripBtn btn-large waves-effect waves-white" data-id="{{city.dataValues.id}}">SAVE THIS TRIP</a>
 
   </div>
  </div>
