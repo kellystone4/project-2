@@ -46,7 +46,7 @@
                 <div class="input-field col s2"></div>
                 <div class="input-field col s8">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="icon_prefix" type="text" class="validate text">
+                  <input id="icon_prefix"  type="text" class="validate text savedName">
                   <label for="icon_prefix">Username</label>
                 
                 </div>
@@ -58,7 +58,7 @@
           </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sign Me Up!</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat signUpBtn">Sign Me Up!</a>
     </div>
 </div>
         
@@ -123,12 +123,12 @@
                 
   <!-- Dropdown Structure -->
  
-  <select class="browser-default savedDropBox" style="width: 200px; height: 40px">
-    <option value="" disabled selected>Select User</option>
+  <select class="browser-default savedDropBox savedUserName" style="width: 200px; height: 40px">
+    <option value="" disabled selected >Select User</option>
     <option value="nameId">Kelly</option>
     <option value="nameId">Rebecca</option>
     <option value="nameId">Andrew</option>
-  </select>
+  </select> 
      <div class="input-field col s12">
     <select multiple>
         <option value="" disabled selected></option>
@@ -138,7 +138,8 @@
      </select>
     <label class="selectFrom">Select from Sights</label>
   </div>
-<br>
+<br>   
+
 <div class="input-field col s12">
     <select multiple>
             <option value="" disabled selected></option>
@@ -152,7 +153,7 @@
       <div class="row">
         <div class="input-field col s6 textInput">
           <i class="material-icons prefix">mode_edit</i>
-          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+          <textarea id="icon_prefix2" class="materialize-textarea userWrittenDescription"> </textarea>
           <label for="icon_prefix2">ADD TRIP DESCRIPTION HERE</label>
         </div>
       </div>

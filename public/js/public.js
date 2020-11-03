@@ -1,73 +1,57 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 //ADD CITY TO SAVED LIST on CITY.HTML & SAVED.HTML
-// $(document).ready(function({
-// var headerInput = 
+$(function(){
 
-
-// })
-
-$(".saveCityBtn").on("click", function(event){
+$(".saveTripBtn").on("click", function(event){
   event.preventDefault();
-  var newCity = {
-      city_name: $("#bg").val(),
-    }  
-    $(".add-city-list").append('<li>'+newCity.city_name+'</li>');
-    $.ajax("/api/city", {
-      type: "GET",
-      data: newCity
-    }).then(
-      function() {
-        console.log("added New City");
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
-
-
-
-// $(function() {
-//   $(".change-sleep").on("click", function(event) {
-//     var id = $(this).data("id");
-//     var newSleep = $(this).data("newsleep");
-
-//     var newSleepState = {
-//       sleepy: newSleep
-//     };
-
-    // Send the PUT request.
-    $.ajax("/api/cats/" + id, {
-      type: "PUT",
-      data: newSleepState
-    }).then(
-      function() {
-        console.log("changed sleep to", newSleep);
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-
-
-  $(".create-form").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
-    event.preventDefault();
-
-    var newCat = {
-      name: $("#ca").val().trim(),
-      sleepy: $("[name=sleepy]:checked").val().trim()
-    };
-
-    // Send the POST request.
-    $.ajax("/api/cats", {
+  var newTrip = {
+      name: $(".savedUserName").val(),
+      description: $(".userWrittenDescription").val(),
+      RestaurantId: [1],
+      SightId: [1]
+    }      
+    $.ajax("/api/trips", {
       type: "POST",
-      data: newCat
+      data: newTrip
     }).then(
       function() {
-        console.log("created new cat");
+        console.log("added New Trip");
         // Reload the page to get the updated list
         location.reload();
       }
     );
   });
+  $(".signUpBtn").on("click", function(event){
+    event.preventDefault();
+    var newUser = {
+        name: $(".savedName").val()
+      }    
+      $.ajax("/api/user", {
+        type: "POST",
+        data: newUser
+      }).then(
+        function() {
+          console.log("added New Username");
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+    });
+function saveTrip(){
+    $.ajax("/api/trips", {
+      type: "GET",
+    }).then(
+      function() {
+        console.log("added New Trip");
+        // Reload the page to get the updated list
+        
+      }
 
+    );
+}
+var saved = ($(".savedName").val());  
+console.log(saved);
+
+  saveTrip();
+});
 
