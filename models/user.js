@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define("User", {
-        // Giving the Author model a name of type STRING
+        // Define author model
         name:
         {
             type: DataTypes.STRING,
@@ -8,13 +8,9 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    // User.associate = function(models) {
-    //   // Associating User with Trips
-    //   // When an USer is deleted, also delete any associated Posts
-    //   User.hasMany(models.Trips, {
-    //     onDelete: "cascade"
-    //   });
-    // };
+    User.associate = function (models) {
+        models.User.hasMany(models.Trip);
+    };
 
     return User;
 };
