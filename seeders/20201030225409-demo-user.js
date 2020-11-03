@@ -9,17 +9,12 @@ module.exports = {
                 updatedAt: new Date()
             },
             {
-                name: "Andrew",
+                name: "Kerwin",
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
             {
                 name: "Rebecca",
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                name: "Kerwin",
                 createdAt: new Date(),
                 updatedAt: new Date()
             }
@@ -413,7 +408,7 @@ module.exports = {
                 CityId: cityRows[0].id
             },
             {
-                name: "Dubai Trip",
+                name: "Derp'n in Dubai",
                 description: "Time to checkout Dubai",
                 createdAt: new Date(),
                 updatedAt: new Date(),
@@ -430,19 +425,11 @@ module.exports = {
             },
             {
                 name: "Aussie Trip",
-                description: "KOALAS!",
+                description: "I derp around the world to pet KOALAS!",
                 createdAt: new Date(),
                 updatedAt: new Date(),
                 UserId: userRows[1].id,
                 CityId: cityRows[0].id
-            },
-            {
-                name: "Derp Trip 2021",
-                description: "Derp'n around the World one Derp at a Derp",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-                UserId: userRows[3].id,
-                CityId: cityRows[1].id
             }
         ], {});
 
@@ -489,61 +476,43 @@ module.exports = {
             },
             {
                 SightId: sightRows[15].id,
-                TripId: tripRows[1].id,
+                TripId: tripRows[3].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
             {
                 SightId: sightRows[16].id,
-                TripId: tripRows[1].id,
+                TripId: tripRows[3].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
             {
                 SightId: sightRows[6].id,
-                TripId: tripRows[3].id,
+                TripId: tripRows[2].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
             {
                 SightId: sightRows[7].id,
-                TripId: tripRows[3].id,
+                TripId: tripRows[2].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
             {
                 SightId: sightRows[8].id,
-                TripId: tripRows[3].id,
+                TripId: tripRows[2].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
             {
                 SightId: sightRows[0].id,
-                TripId: tripRows[2].id,
+                TripId: tripRows[1].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
             {
                 SightId: sightRows[1].id,
-                TripId: tripRows[2].id,
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            },
-            {
-                SightId: sightRows[3].id,
-                TripId: tripRows[4].id,
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            },
-            {
-                SightId: sightRows[4].id,
-                TripId: tripRows[4].id,
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            },
-            {
-                SightId: sightRows[5].id,
-                TripId: tripRows[4].id,
+                TripId: tripRows[1].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             }
@@ -564,61 +533,43 @@ module.exports = {
             },
             {
                 RestaurantId: sightRows[15].id,
-                TripId: tripRows[1].id,
+                TripId: tripRows[3].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
             {
                 RestaurantId: sightRows[16].id,
-                TripId: tripRows[1].id,
+                TripId: tripRows[3].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
             {
                 RestaurantId: sightRows[6].id,
-                TripId: tripRows[3].id,
+                TripId: tripRows[2].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
             {
                 RestaurantId: sightRows[7].id,
-                TripId: tripRows[3].id,
+                TripId: tripRows[2].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
             {
                 RestaurantId: sightRows[8].id,
-                TripId: tripRows[3].id,
+                TripId: tripRows[2].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
             {
                 RestaurantId: sightRows[1].id,
-                TripId: tripRows[2].id,
+                TripId: tripRows[1].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
             {
                 RestaurantId: sightRows[2].id,
-                TripId: tripRows[2].id,
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            },
-            {
-                RestaurantId: sightRows[3].id,
-                TripId: tripRows[4].id,
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            },
-            {
-                RestaurantId: sightRows[4].id,
-                TripId: tripRows[4].id,
-                createdAt: new Date(),
-                updatedAt: new Date(),
-            },
-            {
-                RestaurantId: sightRows[5].id,
-                TripId: tripRows[4].id,
+                TripId: tripRows[1].id,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             }
