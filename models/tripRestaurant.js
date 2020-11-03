@@ -9,5 +9,11 @@ module.exports = function (sequelize, DataTypes) {
         //     notNull: true
         // }
     });
+
+    TripRestaurant.associate = function (models) {
+        models.TripRestaurant.belongsTo(models.Trip);
+        models.TripRestaurant.belongsTo(models.Restaurant);
+    };
+
     return TripRestaurant;
 };

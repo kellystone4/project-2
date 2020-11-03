@@ -1,10 +1,10 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 //ADD CITY TO SAVED LIST on CITY.HTML & SAVED.HTML
-$(document).ready(function({
-var headerInput = 
+// $(document).ready(function({
+// var headerInput = 
 
 
-})
+// })
 
 $(".saveCityBtn").on("click", function(event){
   event.preventDefault();
@@ -46,7 +46,7 @@ $(".saveCityBtn").on("click", function(event){
         location.reload();
       }
     );
-  });
+
 
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
@@ -69,5 +69,5 @@ $(".saveCityBtn").on("click", function(event){
       }
     );
   });
-});
+
 
