@@ -11,8 +11,8 @@ router.get("/", function (req, res) {
         attributes: ["name"]
     }).then(function (data) {
         var hbsObject = {
-            city: data.map(function (City) {
-                return City.toJSON();
+            city: data.map(function (city) {
+                return city.toJSON();
             })
         };
         console.log(JSON.stringify(hbsObject));
@@ -25,7 +25,7 @@ router.get("/", function (req, res) {
 
 // API route to find specific city where id matches req.params.id
 router.get("/api/city/:id", function (req, res) {
-    db.City.findOne({
+    const cityInfo = db.City.findOne({
         where: {
             id: req.params.id
         },
@@ -40,16 +40,22 @@ router.get("/api/city/:id", function (req, res) {
                 attributes: ["name", "type", "website", "image"]
             }
         ]
-    }).then(function (data) {
-        var hbsObject = {
-            city: data
-        };
-        console.log(hbsObject);
-        res.render("city-block", hbsObject);
-    }).catch(function (err) {
-        console.log(err);
-        res.send(false);
     });
+    const userInfo = db.User.findAll();
+
+    Promise
+        .all([cityInfo, userInfo])
+        .then(function ([city, user]) {
+            var hbsObject = {
+                city: city,
+                user: user
+            };
+            console.log(hbsObject);
+            res.render("city-block", hbsObject);
+        }).catch(function (err) {
+            console.log(err);
+            res.send(false);
+        });
 });
 
 // Export routes for server.js to use.
