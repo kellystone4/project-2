@@ -7,82 +7,71 @@ const db = require("../models/index.js");
 
 // Create all our routes and set up logic within those routes where required.
 
-router.get("/api/trips", function (req, res) {
+router.get("/api/trips", function(req, res) {
     db.Trip.findAll({
         // Join with the user and city tables
         include: [{
-            model: db.User,
-            as: "User",
-            attributes: ["name"]
-        },
-        {
-            model: db.City,
-            as: "City",
-            attributes: ["name"]
-        },
-        {
-            model: db.TripSight,
-            // as: "TripSights",
-            // attributes: ["SightId"]
-            include: {
-                model: db.Sight,
-                // as: "sight",
+                model: db.User,
+                as: "User",
                 attributes: ["name"]
             },
-        },
-
-        {
-            model: db.TripRestaurant, 
-            include: {
-                model: db.Restaurant,
-                // as: "sight",
+            {
+                model: db.City,
+                as: "City",
                 attributes: ["name"]
+            },
+            {
+                model: db.TripSight,
+                include: {
+                    model: db.Sight,
+                    attributes: ["name"]
+                },
+            },
+
+            {
+                model: db.TripRestaurant,
+                include: {
+                    model: db.Restaurant,
+                    attributes: ["name"]
+                }
             }
-        }
-        
-        // {
-        //     model: db.City,
-        //     as: "City",
-        //     attributes: ["name"]
-        // },
+
         ]
-    }).then(function (data) {
-        // res.json(data);
-        // console.log(data);
+    }).then(function(data) {
         var hbsObject = {
-            trip: data.map(function (trip) {
+            trip: data.map(function(trip) {
                 return trip.toJSON();
             })
         };
         console.log(hbsObject)
         res.render("saved", hbsObject);
-    }).catch(function (err) {
+    }).catch(function(err) {
         console.log(err);
         res.send(false);
     })
 });
 
 // Route for creating a new trip which includes restaurants & sights
-router.post("/api/trips", function (req, res) {
+router.post("/api/trips", function(req, res) {
     db.Trip.create(req.body)
-        .then(function (trip) {
+        .then(function(trip) {
             // Add trip restaurants to restaurant
             for (let i = 0; i < req.body.restaurantId.length; i++) {
                 db.TripRestaurant.create({
-                    RestaurantId: req.body.restaurantId[i],
-                    TripId: trip.id
-                })
-                    .catch(function (err) {
+                        RestaurantId: req.body.restaurantId[i],
+                        TripId: trip.id
+                    })
+                    .catch(function(err) {
                         console.log(err);
                         res.send(false);
                     })
             }
             for (let i = 0; i < req.body.sightId.length; i++) {
                 db.TripSight.create({
-                    SightId: req.body.sightId[i],
-                    TripId: trip.id
-                })
-                    .catch(function (err) {
+                        SightId: req.body.sightId[i],
+                        TripId: trip.id
+                    })
+                    .catch(function(err) {
                         console.log(err);
                         res.send(false);
                     })
@@ -90,16 +79,4 @@ router.post("/api/trips", function (req, res) {
             res.send(true);
         });
 })
-// Example post request
-// {
-//     "name":"NEW TRIP",
-//     "description": "LONDON LONDON",
-//     "CityId": 3,
-//     "UserId": 2,
-//     "restaurantId": [8, 9, 10],
-//     "sightId": [1, 2, 13]
-// }
-
-
-// Export routes for server.js to use.
 module.exports = router;
