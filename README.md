@@ -1,8 +1,13 @@
-# project-2
+<center>
+
+![alttext](public/assets/XPLORE.gif)
+
 # Xplore
-# Description
+
+## Description
 Xplore was created to eliminate multiple browser tabs, excel spreadsheets, or handwritten notes for trip planning. With Xplore you can find all the information you need in one location to plan your trip. As an Xplorer you will be able to easily select from one of our cities which will populate you with the top restaurants and sights in the area and a place plan your trip. Xplore wants our Xplorers to spend less time searching and more time exploring.
-We created
+
+
 ## Table of Contents
 * [Features](#features)
 * [Built With](#Built_With)
@@ -34,7 +39,10 @@ We created
 [Xplore](https://shrieking-nightmare-37185.herokuapp.com/) - Xplore
 ## Code
 * City Controller API route 
-![City Controller](public/assets/img/code_snippet_1.png)
+![City Controller] 
+
+![img](public/assets/img/code_snippet_1.png)
+
 * Trip Controller API route 
 ![Trip Controller](public/assets/img/code_snippet_2.png)
 * Trip Controller API with two for loops to add sights and restaurants to a trip

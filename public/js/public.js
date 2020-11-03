@@ -13,8 +13,6 @@ $(".saveTripBtn").on("click", function(event){
     }
   })
   event.preventDefault();
-  // const url = window.location.href.split("/")
-  // const cityId = url[url.length -1]
   var newTrip = {
       name: $(".userTripName").val(),
       UserId: $(".savedUserName :selected").val(),
@@ -25,7 +23,6 @@ $(".saveTripBtn").on("click", function(event){
     }  
       
     console.log(newTrip)
-    // console.log(newTrip);
 
      $.ajax("/api/trips", {
        type: "POST",
@@ -54,18 +51,6 @@ $(".signUpBtn").on("click", function(event){
         }
       );
     });
-// function saveTrip(){
-//     $.ajax("/api/trips", {
-//       type: "GET",
-//     }).then(
-//       function() {
-//         console.log("added New Trip");
-//         // Reload the page to get the updated list
-        
-//       }
-
-//     );
-// }
 });
 
 
