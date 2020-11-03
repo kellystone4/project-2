@@ -10,7 +10,7 @@
                 <li><a href="/">H O M E</a></li>
                 <li><a href="/api/trips">S A V E D &nbsp; T R I P S</a></li>
                 <li>
-                    <a class="modal-trigger" href="#modal">S I G N &nbsp; U P</a>
+                    <a class="modal-trigger" href="#modal3">S I G N &nbsp; U P</a>
                     
                 <!-- <button data-target="modal1" class="btn modal-trigger">S I G N &nbsp; U P</button> -->
                 </li>
@@ -23,13 +23,13 @@
           <ul class="sidenav" id="mobile-demo">
             <li><a href="/">H O M E</a></li>
             <li><a href="api/trips">S A V E D &nbsp; T R I P S</a></li>
-            <li><a href="#modal" class="modal-trigger">S I G N &nbsp; U P</a></li>
+            <li><a href="#modal3" class="modal-trigger">S I G N &nbsp; U P</a></li>
           </ul>
 
 
            <!-- Modal Trigger -->
          
-  <div id="modal" class="modal">
+  <div id="modal3" class="modal">
     <div class="jumbotron bg-cover text-white pic" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://wallpaperaccess.com/full/123346.jpg)">
 
     <div class="modal-content">
@@ -231,9 +231,9 @@
 
     $(document).ready(function(){
       $('.sidenav').sidenav();
-    $('#modal').modal(); 
-     $('#modal').modal('open'); 
-     $('#modal').modal('close'); 
+    $('.modal').modal(); 
+     $('.modal').modal('open'); 
+     $('.modal').modal('close'); 
     $('input#input_text, textarea#textarea2').characterCounter();
   });
   

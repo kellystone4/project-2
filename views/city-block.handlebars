@@ -1,24 +1,21 @@
 
     
-        <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("{{image}}")">
-        <nav><title>{{city}}</title>
-        {{!-- <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url({{https://wallpaperaccess.com/full/1192224.jpg}})"> --}}
-        <nav>
-            <div class="nav-wrapper">
+        <title>XLPORE</title>
+        <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('{{city.image}}')">
+         <nav>
+            <div class="nav-wrapper linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%)">
               <a class="brand-logo"> 
-                  <!-- <h1 class="wel animate__animated animate__pulse"> <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="logo">	 -->
                </a>
-             {{!-- <img src="LogoMakr-7a5fw7.png" alt="Italian Trulli" class="headerLogo">  --}}
 
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
               <ul class="right hide-on-med-and-down">
-                <a href="/">H O M E</a>
-                <a href="/api/trips">S A V E D &nbsp; T R I P S</a>
-                
-                    <a class="modal-trigger" href="#modal">S I G N &nbsp; U P</a>
+                <li><a href="/">H O M E</a></li>
+                <li><a href="/api/trips">S A V E D &nbsp; T R I P S</a></li>
+                <li>
+                    <a class="modal-trigger" href="#modal3">S I G N &nbsp; U P</a>
                     
                 <!-- <button data-target="modal1" class="btn modal-trigger">S I G N &nbsp; U P</button> -->
-                
+                </li>
 
               </ul>
               
@@ -26,16 +23,15 @@
           </nav>
           
           <ul class="sidenav" id="mobile-demo">
-            <a href="/">H O M E</a>
-            <a href="api/trips">S A V E D &nbsp; T R I P S</a>
-            <a href="#modal" class="modal-trigger">S I G N &nbsp; U P</a>
+            <li><a href="/">H O M E</a></li>
+            <li><a href="api/trips">S A V E D &nbsp; T R I P S</a></li>
+            <li><a href="#modal3" class="modal-trigger">S I G N &nbsp; U P</a></li>
           </ul>
-
 
 
            <!-- Modal Trigger -->
          
-  <div id="modal" class="modal">
+  <div id="modal2" class="modal">
     <div class="jumbotron bg-cover text-white pic" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://wallpaperaccess.com/full/123346.jpg)">
 
     <div class="modal-content">
@@ -79,93 +75,48 @@
           </div>
           {{!-- <a class="saveTripBtn btn-large waves-effect waves-white">SAVE THIS TRIP</a> --}}
           <h1 class="title wel animate__animated animate__pulse"> 
-            <div id="title">{{name}}</div> </h1>            
-            <i><p class="cityDescription">{{description}}</p></i>
+            <div id="title">{{city.name}}</div> </h1>            
+            <i><p class="cityDescription">{{city.description}}</p></i>
             <br>
              <div class="row sRS">
-                <div class="grid-example col s12 m4 full-width" id="sightDiv"><span class="flow-text"><h3><u>SIGHTS</u></h3>
-                    <br>
-                    <p> {{#each city.Sights}} 
+<div class="row sRS">
+                <div class="grid-example col s12 m4 full-width" id="sightDiv"><span class="flow-text"><h3><u>SIGHTS</u></h3>                    <p> {{#each city.Sights}} 
                       <label>
-                    <br>
-                    {{this.name}}
-                    <br>
-                     <p class="sightInfo">{{this.description}}</p>
+                    <p class="sightName">{{this.name}}</p>
                     <br>
                     <img src="{{this.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
+                      <br>
+                     <p class="sightInfo">{{this.description}}</p>
+                     <br>
                     <br>
                     {{/each}}
                   </p>
                   <form action="#">
-
-                    {{!-- <br>
-                    <br>
-                   <img src="https://t1.gstatic.com/images?q=tbn:ANd9GcRuA7eHm1m22taUbKIO2h5AF1IfD_-55ylPg7HUM-Q4IDIQ5ofbuLesjRuq5USD1hNuie0oqAXWMBHDPPIb49OsUw" style="width: 300px; height: 200px sightImg" alt="Italian Trulli" >
- 
-                <br>
-                    <p class="sightInfo">The Louvre, or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement. Approximately 38,000 objects from prehistory to the 21st century are exhibited over an area of 72,735 square meters.</p>
-                    <a class="saveSightsBtn btn-small waves-effect waves-white">SAVE SIGHT</a>
-                    <br>
-                    2. SIGHT TWO
-                     <br>
-                        -IMG
-                    <br>
-                        -INFO
-                    
-    
-                    <br>
-                    3. SIGHT THREE
-                    <br>
-                        -IMG
-                    <br>
-                        -INFO
-                     --}}
                 </span></div>
-                <div class="grid-example col s12 m4"><span class="flow-text"><h3><u>RESTAURANTS</u></h3>
+                <div class="grid-example col s12 m4 full-width" id="sightDiv"> <span class="flow-text"><h3><u>RESTAURANTS</u></h3>
                     <label>
+                     {{#each city.Restaurants}}
+                    <p class="restaurantName">{{this.name}}</p>
                     <br>
-                     {{#each city.Restaurants}} 
-                     <br>
-                    {{this.name}}
-                    <br><i>
+                    <img src="{{this.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
+
+                    <br><i class= "restaurantType">
                     {{this.type}}
                     </i>
                     <br>
-                    <a href={{this.website}}>Restaurant Website Here</a>
+                    <p class= "restaurantWebsite">
+                    Website:
                     <br>
-                    <img src="{{this.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
+                    <a href={{this.website}}>Click Here!
+                    </a>
+                    </p>
+                    <br>
                     <br>
                     {{/each}}
                     <form action="#">
+                      
                   </p>
                   </p>
-                    {{!-- <br>
-                    <i><p class="restaurantType">Fine Dining</p></i>
-                    <img src="https://res.cloudinary.com/tf-lab/image/upload/restaurant/addec800-3e93-4cff-9cee-9466c66c4bb8/50de189c-f22a-4b42-baed-78171710377f.jpg"
-                    style="width: 300px; height: 200px; restaurantImg" alt="Italian Trulli" >
-                    <br>
-                    <p class="restaurantWebsite">Website: <i><a href="https://www.paris-restaurant-pur.fr/?src=prop_gmb_seo_purjfr">https://www.paris-restaurant-pur.fr/?src=prop_gmb_seo_purjfr"</a></i></p>
-
-                
-                    <a class="saveRestaurantBtn btn-small waves-effect waves-white">SAVE RESTAURANT</a>
-
-                   
-                    <br>
-                    2. RESTO TWO
-                    <br>
-                    -IMG
-                <br>
-                    -INFO
-                
-    
-    
-                    <br>
-                    3. RESTO THREE
-                    <br>
-                    -IMG
-                <br>
-                    -INFO
-                 --}}
                 </span></div>
                 <div class="grid-example col s12 m4"><span class="flow-text"><h3><u>SAVED</u></h3>
                     <br>
@@ -210,7 +161,7 @@
    <a class="saveTripBtn btn-large waves-effect waves-white">SAVE THIS TRIP</a>
 
   </div>
- 
+ </div>
            <div class = "savedItems">
 {{!--            
                     <a class="deleteBtn btn-small waves-effect waves-white">DELETE</a> --}}
@@ -218,12 +169,8 @@
 <script type="text/javascript">
     $(document).ready(function(){
       $('.sidenav').sidenav();
-    $('#modal').modal(); 
-     $('#modal').modal('open'); 
-     $('#modal').modal('close'); 
+    $('.modal').modal(); 
     $('input#input_text, textarea#textarea2').characterCounter();
-    $('select').formSelect();
-    instance.getSelectedValues();
     $('select').formSelect();
   });
 
