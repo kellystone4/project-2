@@ -1,10 +1,8 @@
-# Xplore Project-2
-
+# project-2
+# Xplore
 # Description
 Xplore was created to eliminate multiple browser tabs, excel spreadsheets, or handwritten notes for trip planning. With Xplore you can find all the information you need in one location to plan your trip. As an Xplorer you will be able to easily select from one of our cities which will populate you with the top restaurants and sights in the area and a place plan your trip. Xplore wants our Xplorers to spend less time searching and more time exploring.
-
 We created
-
 ## Table of Contents
 * [Features](#features)
 * [Built With](#Built_With)
@@ -13,7 +11,6 @@ We created
 * [Credits](#Credits)
 * [Authors](#Authors)
 * [License](#License)
-
 ## Features
 * MySQL database with many to many relationships
 * Materialize is a modern responsive front-end framework based on Material Design
@@ -33,12 +30,9 @@ We created
 * [Heroku](https://heroku.com) - a cloud platform for deploying web applications
 * [Git](https://git-scm.com/) - version control system to track changes in source code
 * [GitHub](https://github.com/) - hosts repository and deploys page on GitHub
-
 ## Deployed Link
 [Xplore](https://shrieking-nightmare-37185.herokuapp.com/) - Xplore
-
 ## Code
-
 * City Controller API route 
 ![City Controller](public/assets/img/code_snippet_1.png)
 * Trip Controller API route 
@@ -49,41 +43,31 @@ We created
 ![Models](public/assets/img/code_snippet_5.png)
 * City Association
 ![Models](public/assets/img/code_snippet_6.png)
-
 ## Credits
 * [Materialize] (https://materializecss.com/)
 * [Font Awesome](https://fontawesome.com/icons/) - logos
-
 ## Authors
 * Rebecca Eng
 * [GitHub](https://github.com/engrebecca)
 * [LinkedIn](https://www.linkedin.com/in/engrebecca/)
-
 * Kelly Stone
 * [Github](https://github.com/kellystone4)
 * [LinkedIn](https://www.linkedin.com/in/kelly-a-stone/)
-
 * Andrew Kosel
 * [Github](https://github.com/andrewkosel)
 * [LinkedIn](https://www.linkedin.com/in/andrew-kosel/)
-
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 MIT License
-
 Copyright (c) [2020] [Rebecca Eng, Kelly Stone, Andrew Kosel]
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
