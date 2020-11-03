@@ -67,10 +67,37 @@
   text-align: center;
   font-family: 'Roboto', sans-serif;
 }
+.restaurantName {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px; 
+  color:white;
+  text-shadow: 2px 2px 4px #000000;
+}
 .sightInfo {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
+  letter-spacing: 1px; 
+  color:white;
+  text-shadow: 2px 2px 4px #000000;
+}
+/* .titleShadow {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px; 
+  color:white;
+  text-shadow: 2px 2px 4px #000000;
+} */
+#sightId{
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px; 
+  color:white;
+  text-shadow: 2px 2px 4px #000000;
 }
 .cityDescription {
   text-align: center;
@@ -100,6 +127,13 @@
   margin-left: 25%;
   margin: 5%;
   background-color: #afafaf  !important;
+}
+#title {
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px; 
+  color:white;
+  text-shadow: 2px 2px 4px #000000;
 }
 .saveRestaurantBtn{
   margin-left: 30%;
@@ -181,6 +215,8 @@ p{
 .title {
     text-align: center;
     font-size: 60px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px; 
 }
 /* .card-header {
     padding-top: -100px;
@@ -189,6 +225,8 @@ p{
     text-align: center;
     font-size: 25px;
     padding: 3%;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px; 
 }
 .addDescriptionHere {
   margin-top: -2%;
@@ -204,18 +242,40 @@ p{
   letter-spacing: 1px; 
   padding: 1%;
   margin-top: -4%;
+  color:white;
 
 }
+#icon_prefix2 {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px; 
+  color:white;
+  text-shadow: 2px 2px 4px #000000;
+
+}
+/* label {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 25px;
+} */
+.restaurantType {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 20px;
+}
 .text {
-    color: white;
     font-family: 'Roboto', sans-serif;
-    letter-spacing: 1px; 
+    letter-spacing: 1px;
+ 
 }
 .inputUsernameHere {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 25px;
     letter-spacing: 1px; 
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
 
 }
 /* .inputUser {
@@ -225,23 +285,33 @@ p{
     text-align: center;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px; 
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
     /* text-decoration: underline */
 }
 body {
   background: #333;
   color: #fff;
   font-family: 'Roboto', sans-serif;
+  /* color: white;
+  text-shadow: 2px 2px 4px #000000; */
 }
 h2 {
   font-size: 45px;
   font-weight: 300;
   margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px; 
 }
 h2 span {
   font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px; 
 }
 p {
   font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px; 
 }
 .container {
   display: grid;

@@ -40,7 +40,6 @@ router.get("/api/city/:id", function (req, res) {
                 attributes: ["id", "name", "type", "website", "image"]
             }
         ]
-
     });
     const userInfo = db.User.findAll();
 
