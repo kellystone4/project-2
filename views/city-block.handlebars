@@ -1,7 +1,7 @@
 
     
         <title>XLPORE</title>
-        <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('{{city.image}}')">
+        <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('{{city.dataValues.image}}')">
          <nav>
             <div class="nav-wrapper linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%)">
               <a class="brand-logo"> 
@@ -12,7 +12,7 @@
                 <li><a href="/">H O M E</a></li>
                 <li><a href="/api/trips">S A V E D &nbsp; T R I P S</a></li>
                 <li>
-                    <a class="modal-trigger" href="#modal3">S I G N &nbsp; U P</a>
+                    <a class="modal-trigger" href="#modal2">S I G N &nbsp; U P</a>
                     
                 <!-- <button data-target="modal1" class="btn modal-trigger">S I G N &nbsp; U P</button> -->
                 </li>
@@ -25,7 +25,7 @@
           <ul class="sidenav" id="mobile-demo">
             <li><a href="/">H O M E</a></li>
             <li><a href="api/trips">S A V E D &nbsp; T R I P S</a></li>
-            <li><a href="#modal3" class="modal-trigger">S I G N &nbsp; U P</a></li>
+            <li><a href="#modal2" class="modal-trigger">S I G N &nbsp; U P</a></li>
           </ul>
 
 
@@ -46,7 +46,7 @@
                 <div class="input-field col s2"></div>
                 <div class="input-field col s8">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="icon_prefix" type="text" class="validate text">
+                  <input id="icon_prefix"  type="text" class="validate text savedName">
                   <label for="icon_prefix">Username</label>
                 
                 </div>
@@ -58,7 +58,7 @@
           </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sign Me Up!</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat signUpBtn">Sign Me Up!</a>
     </div>
 </div>
         
@@ -75,39 +75,39 @@
           </div>
           {{!-- <a class="saveTripBtn btn-large waves-effect waves-white">SAVE THIS TRIP</a> --}}
           <h1 class="title wel animate__animated animate__pulse"> 
-            <div id="title">{{city.name}}</div> </h1>            
-            <i><p class="cityDescription">{{city.description}}</p></i>
+            <div id="title">{{city.dataValues.name}}</div> </h1>            
+            <i><p class="cityDescription">{{city.dataValues.description}}</p></i>
             <br>
              <div class="row sRS">
 <div class="row sRS">
-                <div class="grid-example col s12 m4 full-width" id="sightDiv"><span class="flow-text"><h3><u>SIGHTS</u></h3>                    <p> {{#each city.Sights}} 
+                <div class="grid-example col s12 m4 full-width" id="sightDiv"><span class="flow-text titleShadow"><h3><u>SIGHTS</u></h3>                    <p> {{#each city.Sights}} 
                       <label>
-                    <p class="sightName">{{this.name}}</p>
+                    <p class="sightName">{{this.dataValues.name}}</p>
                     <br>
-                    <img src="{{this.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
+                    <img src="{{this.dataValues.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
                       <br>
-                     <p class="sightInfo">{{this.description}}</p>
+                     <p class="sightInfo">{{this.dataValues.description}}</p>
                      <br>
                     <br>
                     {{/each}}
                   </p>
                   <form action="#">
                 </span></div>
-                <div class="grid-example col s12 m4 full-width" id="sightDiv"> <span class="flow-text"><h3><u>RESTAURANTS</u></h3>
+                <div class="grid-example col s12 m4 full-width" id="sightDiv"> <span class="flow-text titleShadow"><h3><u>RESTAURANTS</u></h3>
                     <label>
-                     {{#each city.Restaurants}}
-                    <p class="restaurantName">{{this.name}}</p>
+                     {{#each city.dataValues.Restaurants}}
+                    <p class="restaurantName">{{this.dataValues.name}}</p>
                     <br>
-                    <img src="{{this.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
+                    <img src="{{this.dataValues.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
 
                     <br><i class= "restaurantType">
-                    {{this.type}}
+                    {{this.dataValues.type}}
                     </i>
                     <br>
                     <p class= "restaurantWebsite">
                     Website:
                     <br>
-                    <a href={{this.website}}>Click Here!
+                    <a href={{this.dataValues.website}}>Click Here!
                     </a>
                     </p>
                     <br>
@@ -118,47 +118,57 @@
                   </p>
                   </p>
                 </span></div>
-                <div class="grid-example col s12 m4"><span class="flow-text"><h3><u>SAVED</u></h3>
+                <div class="grid-example col s12 m4"><span class="flow-text titleShadow"><h3><u>SAVED</u></h3>
                     <br>
                 
   <!-- Dropdown Structure -->
  
-  <select class="browser-default savedDropBox" style="width: 200px; height: 40px">
-    <option value="" disabled selected>Select User</option>
-    <option value="nameId">Kelly</option>
-    <option value="nameId">Rebecca</option>
-    <option value="nameId">Andrew</option>
-  </select>
+  <select class="browser-default savedDropBox savedUserName" style="width: 200px; height: 40px">
+    <option value="" disabled selected >Select User</option>
+    {{#each user}}
+    <option value="{{dataValues.id}}">{{dataValues.name}}</option>
+    {{/each}}
+  </select> 
      <div class="input-field col s12">
-    <select multiple>
-        <option value="" disabled selected></option>
-   {{#each city.Sights}}
-      <option value="{{id}}">{{name}}</option>
+    <select multiple id="userSelectSight">
+        {{!-- <option value="" disabled selected></option> --}}
+   {{#each city.dataValues.Sights}}
+      <option class="selectSight" value="{{dataValues.id}}">{{dataValues.name}}</option>
     {{/each}}
      </select>
     <label class="selectFrom">Select from Sights</label>
   </div>
-<br>
+<br>   
+
 <div class="input-field col s12">
-    <select multiple>
+    <select multiple id="userSelectRestaurant">
             <option value="" disabled selected></option>
-         {{#each city.Restaurants}}
-      <option value="{{id}}">{{name}}</option>
+         {{#each city.dataValues.Restaurants}}
+      <option value="{{dataValues.id}}">{{dataValues.name}}</option>
     {{/each}}
         </select>
     <label class="selectFrom">Select from Restaurants</label>
   </div>
+  <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6 textInput">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea id="icon_prefix2" class="materialize-textarea userTripName"> </textarea>
+          <label for="icon_prefix2">ADD TRIP NAME HERE</label>
+        </div>
+      </div>
+    </form>
 <form class="col s12">
       <div class="row">
         <div class="input-field col s6 textInput">
           <i class="material-icons prefix">mode_edit</i>
-          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+          <textarea id="icon_prefix2" class="materialize-textarea userWrittenDescription"> </textarea>
           <label for="icon_prefix2">ADD TRIP DESCRIPTION HERE</label>
         </div>
       </div>
     </form>
   </div>
-   <a class="saveTripBtn btn-large waves-effect waves-white">SAVE THIS TRIP</a>
+   <a class="saveTripBtn btn-large waves-effect waves-white" data-id="{{city.dataValues.id}}">SAVE THIS TRIP</a>
 
   </div>
  </div>
