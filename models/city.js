@@ -2,15 +2,15 @@ module.exports = function (sequelize, DataTypes) {
     var City = sequelize.define("City", {
         name: {
             type: DataTypes.STRING,
-            notNull: true
+            allowNull: false
         },
         description: {
             type: DataTypes.TEXT,
-            notNull: true
+            allowNull: false
         },
         image: {
             type: DataTypes.TEXT,
-            notNull: true
+            allowNull: false
         }
     });
 

@@ -2,11 +2,11 @@ module.exports = function (sequelize, DataTypes) {
     var Trip = sequelize.define("Trip", {
         name: {
             type: DataTypes.STRING,
-            notNull: true
+            allowNull: false
         },
         description: {
             type: DataTypes.TEXT,
-            notNull: true
+            allowNull: false
         }
     });
 
