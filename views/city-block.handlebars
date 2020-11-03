@@ -1,7 +1,7 @@
 
     
         <title>XLPORE</title>
-        <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('{{city.image}}')">
+        <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('{{city.dataValues.image}}')">
          <nav>
             <div class="nav-wrapper linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%)">
               <a class="brand-logo"> 
@@ -75,18 +75,18 @@
           </div>
           {{!-- <a class="saveTripBtn btn-large waves-effect waves-white">SAVE THIS TRIP</a> --}}
           <h1 class="title wel animate__animated animate__pulse"> 
-            <div id="title">{{city.name}}</div> </h1>            
-            <i><p class="cityDescription">{{city.description}}</p></i>
+            <div id="title">{{city.dataValues.name}}</div> </h1>            
+            <i><p class="cityDescription">{{city.dataValues.description}}</p></i>
             <br>
              <div class="row sRS">
 <div class="row sRS">
                 <div class="grid-example col s12 m4 full-width" id="sightDiv"><span class="flow-text"><h3><u>SIGHTS</u></h3>                    <p> {{#each city.Sights}} 
                       <label>
-                    <p class="sightName">{{this.name}}</p>
+                    <p class="sightName">{{this.dataValues.name}}</p>
                     <br>
-                    <img src="{{this.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
+                    <img src="{{this.dataValues.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
                       <br>
-                     <p class="sightInfo">{{this.description}}</p>
+                     <p class="sightInfo">{{this.dataValues.description}}</p>
                      <br>
                     <br>
                     {{/each}}
@@ -95,19 +95,19 @@
                 </span></div>
                 <div class="grid-example col s12 m4 full-width" id="sightDiv"> <span class="flow-text"><h3><u>RESTAURANTS</u></h3>
                     <label>
-                     {{#each city.Restaurants}}
-                    <p class="restaurantName">{{this.name}}</p>
+                     {{#each city.dataValues.Restaurants}}
+                    <p class="restaurantName">{{this.dataValues.name}}</p>
                     <br>
-                    <img src="{{this.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
+                    <img src="{{this.dataValues.image}}" style="width: 300px; height: 200px sightImg" alt="Italian Trulli"/>
 
                     <br><i class= "restaurantType">
-                    {{this.type}}
+                    {{this.dataValues.type}}
                     </i>
                     <br>
                     <p class= "restaurantWebsite">
                     Website:
                     <br>
-                    <a href={{this.website}}>Click Here!
+                    <a href={{this.dataValues.website}}>Click Here!
                     </a>
                     </p>
                     <br>
