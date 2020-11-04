@@ -35,10 +35,10 @@
           <form class="col s12">
             <div class="row">
               <div class="input-field col s2"></div>
-              <div class="input-field col s8 white">
+              <div class="input-field col s8 validate white">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate text savedName">
-                <label for="icon_prefix">Username</label>
+                <input id="icon_prefix" type="text" class="validate text savedName required="" aria-required="true"">
+                <label for="icon_prefix" "example" data-error="wrong" data-success="right">Username</label>
               </div>
               <div class="input-field col s2"></div>
             </div>
@@ -131,23 +131,23 @@
                 <option class="selectSight" value="{{dataValues.id}}">{{dataValues.name}}</option>
                 {{/each}}
               </select>
-              <label class="selectFrom">Select from Sights</label>
+              <label class="selectFrom validate valid invalid required="" aria-required="true"">Select from Sights</label>
             </div>
             <br>
 
             <div class="input-field col s12 white">
               <select multiple id="userSelectRestaurant">
                 {{#each city.dataValues.Restaurants}}
-                <option class="white" value="{{dataValues.id}}">{{dataValues.name}}</option>
+                <option class="white validate valid invalid required="" aria-required="true"" value="{{dataValues.id}}">{{dataValues.name}}</option>
                 {{/each}}
               </select>
-              <label class="selectFrom">Select from Restaurants</label>
+              <label class="selectFrom validate valid invalid required="" aria-required="true"">Select from Restaurants</label>
             </div>
             <form class="col s12">
               <div class="row">
                 <div class="input-field col s6 textInput">
                   <i class="material-icons prefix">mode_edit</i>
-                  <textarea id="icon_prefix2" class="materialize-textarea userTripName"> </textarea>
+                  <textarea id="icon_prefix2" class="materialize-textarea userTripName validate valid invalid required="" aria-required="true""> </textarea>
                   <label for="icon_prefix2">ADD TRIP NAME HERE</label>
                 </div>
               </div>
@@ -156,7 +156,7 @@
               <div class="row">
                 <div class="input-field col s6 textInput">
                   <i class="material-icons prefix">mode_edit</i>
-                  <textarea id="icon_prefix2" class="materialize-textarea userWrittenDescription"> </textarea>
+                  <textarea id="icon_prefix2" class="materialize-textarea userWrittenDescription validate valid invalid required="" aria-required="true""> </textarea>
                   <label for="icon_prefix2">ADD TRIP DESCRIPTION HERE</label>
                 </div>
               </div>
