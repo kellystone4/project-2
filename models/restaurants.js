@@ -1,4 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
+    // Define restaurant model
     var Restaurant = sequelize.define("Restaurant", {
         name: {
             type: DataTypes.STRING,
@@ -15,20 +16,13 @@ module.exports = function (sequelize, DataTypes) {
         image: {
             type: DataTypes.TEXT,
             allowNull: false
-        },
-        // city_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: "Cities",
-        //         key: "id"
-        //     },
-        //     allowNull: false
-        // }
+        }
     });
 
-    // We're saying that a Resaurant should belong to an City and has a many to many relationship with Trip
+    // Many restaurants belong to one city
+    // A restaurant can be on multiple trips, a trip can have multiple restaurants
     Restaurant.associate = function (models) {
-        Restaurant.belongsTo(models.City, { allowNull: false });
+        models.Restaurant.belongsTo(models.City, { allowNull: false });
         models.Restaurant.hasMany(models.TripRestaurant);
     };
 

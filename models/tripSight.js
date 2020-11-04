@@ -1,13 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
+    // Define TripSight model, many to many relationship
     var TripSight = sequelize.define("TripSight", {
-        // tripId: {
-        //     type: DataTypes.INTEGER,
-        //     notNull: true
-        // },
-        // sightId: {
-        //     type: DataTypes.INTEGER,
-        //     notNull: true
-        // }
     });
 
     TripSight.associate = function (models) {
